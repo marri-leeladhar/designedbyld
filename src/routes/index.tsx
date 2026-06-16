@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { motion, useScroll, useTransform, useInView, useMotionValue, useSpring, AnimatePresence } from "framer-motion";
 import {
-  ArrowUpRight, Download, Mail, Phone, MapPin, Linkedin, Instagram,
+  ArrowUpRight, Download, Mail, Phone, MapPin, Link2 as Linkedin, Camera as Instagram,
   Palette, Sparkles, Layers, PenTool, Megaphone, Presentation, LayoutGrid, Globe,
-  Figma, Code2, Cpu, Camera, Check, Send, Star, Briefcase, Award, Zap,
+  PenSquare as Figma, Code2, Cpu, Camera, Check, Send, Star, Briefcase, Award, Zap,
   ArrowRight, X, Quote,
 } from "lucide-react";
 
