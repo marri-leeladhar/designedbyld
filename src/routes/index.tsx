@@ -823,7 +823,6 @@ function Contact() {
             {[
               { icon: Mail, l: "Email", v: "marrileela17@gmail.com", h: "mailto:marrileela17@gmail.com" },
               { icon: Phone, l: "Phone", v: "+91 7815982351", h: "tel:+917815982351" },
-              { icon: MapPin, l: "Location", v: "Vijayawada, AP, India" },
               { icon: Linkedin, l: "LinkedIn", v: "marri-leeladhar", h: "https://linkedin.com/in/marri-leeladhar" },
             ].map((c) => {
               const Comp: any = c.h ? "a" : "div";
