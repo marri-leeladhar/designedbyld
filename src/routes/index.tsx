@@ -795,7 +795,7 @@ function Socials() {
 function Contact() {
   const [sent, setSent] = useState(false);
   const [errs, setErrs] = useState<Record<string,string>>({});
-  const [form, setForm] = useState({ name: "", email: "", phone: "", type: "Brand Identity", budget: "$500 - $1k", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", type: "Brand Identity", message: "" });
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -806,7 +806,7 @@ function Contact() {
     setErrs(er);
     if (Object.keys(er).length) return;
     const subject = `New project inquiry from ${form.name}`;
-    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nType: ${form.type}\nBudget: ${form.budget}\n\n${form.message}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nType: ${form.type}\n\n${form.message}`;
     window.location.href = `mailto:marrileela17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
