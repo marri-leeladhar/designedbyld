@@ -283,23 +283,21 @@ function About() {
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="lg:col-span-5">
             <div className="glass relative overflow-hidden rounded-3xl p-1">
-              <div className="aspect-[4/5] w-full rounded-[1.4rem] gradient-primary p-10">
-                <div className="flex h-full flex-col justify-between text-white">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-[0.3em] opacity-80">Designer</span>
-                    <Sparkles className="h-5 w-5" />
-                  </div>
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.4rem]">
+                <img src={ldHero.url} alt="designedby.ld at work" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 text-white">
                   <div>
-                    <div className="font-display text-6xl font-bold leading-none">LM</div>
-                    <div className="mt-4 text-2xl font-semibold">DESIGNEDBYLD</div>
-                    <div className="mt-1 text-sm opacity-80">Vijayawada · India</div>
+                    <div className="font-display text-3xl font-bold leading-none">designedby.ld</div>
+                    <div className="mt-1 text-sm text-accent">Designer · Storyteller</div>
                   </div>
+                  <Sparkles className="h-5 w-5 text-accent" />
                 </div>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-3">
               {[
-                { l: "Based in", v: "Vijayawada, IN" },
+                { l: "Based in", v: "India" },
                 { l: "Focus", v: "Brand · Social · UI" },
                 { l: "Experience", v: "2+ Years" },
                 { l: "Availability", v: "Open to work" },
