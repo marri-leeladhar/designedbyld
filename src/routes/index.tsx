@@ -480,6 +480,15 @@ const projects: Project[] = [
   { id: "p6", title: "Instagram Campaign Series", role: "Social Media Designer", category: "Social Media",
     description: "Cohesive grid system + reel covers driving 3x engagement for a creator-led brand.",
     tools: ["Canva", "CapCut", "Figma"], gradient: "linear-gradient(135deg, #10B981, #06B6D4)", emoji: "📱", size: "sm" },
+  { id: "p7", title: "Reel Covers & Story Highlights", role: "Content Designer", category: "Social Media",
+    description: "Scroll-stopping reel covers and modular story highlight icons crafted for @designedby.ld and client pages.",
+    tools: ["Photoshop", "Figma", "CapCut"], gradient: "linear-gradient(135deg, #F472B6, #89e900)", emoji: "🎬", size: "md" },
+  { id: "p8", title: "Typographic Quote Posts", role: "Graphic Designer", category: "Social Media",
+    description: "A weekly typographic series for Instagram — bold type, lime accents, consistent brand voice.",
+    tools: ["Illustrator", "Figma"], gradient: "linear-gradient(135deg, #0a0a0a, #5ba300)", emoji: "✒️", size: "sm" },
+  { id: "p9", title: "Carousel Storytelling", role: "Visual Storyteller", category: "Content Design",
+    description: "10-slide Instagram carousels turning complex ideas into bite-sized, swipeable narratives.",
+    tools: ["Figma", "Canva"], gradient: "linear-gradient(135deg, #89e900, #06B6D4)", emoji: "📖", size: "sm" },
 ];
 
 const categories = ["All", "Branding", "Social Media", "Posters", "UI Design", "Content Design", "Campaigns"];
