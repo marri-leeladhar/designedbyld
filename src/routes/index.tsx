@@ -888,11 +888,6 @@ function Contact() {
                   {["ASAP", "2-4 weeks", "1-2 months", "Flexible"].map(o => <option key={o}>{o}</option>)}
                 </select>
               </Field>
-              <Field label="Timeline">
-                <select className="input" defaultValue="Flexible">
-                  {["ASAP", "2-4 weeks", "1-2 months", "Flexible"].map(o => <option key={o}>{o}</option>)}
-                </select>
-              </Field>
             </div>
             <Field label="Message" err={errs.message}>
               <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} maxLength={1000} rows={5}
