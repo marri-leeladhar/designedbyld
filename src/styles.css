@@ -36,39 +36,40 @@
 
 :root {
   --radius: 0.875rem;
-  /* Premium dark palette */
-  --background: #000000;
-  --foreground: #89e900;
-  --card: #1a1a1a;
-  --card-foreground: #89e900;
-  --popover: #1a1a1a;
-  --popover-foreground: #89e900;
+  /* Light theme with lime accent */
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
   --primary: #89e900;
-  --primary-foreground: #000000;
-  --secondary: #393939;
-  --secondary-foreground: #89e900;
-  --accent: #89e900;
-  --accent-foreground: #000000;
-  --muted: #2a2a2a;
-  --muted-foreground: #89e900cc;
+  --primary-foreground: #0a0a0a;
+  --secondary: #f3f4f6;
+  --secondary-foreground: #0a0a0a;
+  --accent: #5ba300;
+  --accent-foreground: #ffffff;
+  --muted: #f3f4f6;
+  --muted-foreground: #4b5563;
   --destructive: oklch(0.6 0.24 25);
   --destructive-foreground: #ffffff;
-  --border: #89e90033;
-  --input: #ffffff1f;
+  --border: #0a0a0a14;
+  --input: #0a0a0a14;
   --ring: #89e900;
 
   /* Custom premium tokens */
   --gradient-primary: linear-gradient(135deg, #89e900, #5ba300);
-  --gradient-accent: linear-gradient(135deg, #89e900, #b6ff3d);
+  --gradient-accent: linear-gradient(135deg, #5ba300, #89e900);
   --gradient-hero: radial-gradient(ellipse at top, #89e90033, transparent 60%),
                    radial-gradient(ellipse at bottom right, #89e90022, transparent 60%),
-                   radial-gradient(ellipse at bottom left, #39393999, transparent 60%),
-                   linear-gradient(135deg, #000000 0%, #393939 100%);
+                   radial-gradient(ellipse at bottom left, #f3f4f6, transparent 60%),
+                   linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
   --shadow-glow: 0 20px 60px -15px #89e90080;
   --shadow-glow-accent: 0 20px 60px -15px #89e90080;
-  --shadow-card: 0 8px 32px -8px #000000cc;
-  --glass-bg: #89e9000a;
-  --glass-border: #89e90033;
+  --shadow-card: 0 8px 32px -8px #0a0a0a1a;
+  --glass-bg: #ffffffcc;
+  --glass-border: #0a0a0a14;
+
 }
 
 
@@ -81,8 +82,8 @@
   * { border-color: var(--color-border); }
   html { scroll-behavior: smooth; }
   body {
-    background-color: #000000;
-    background-image: linear-gradient(135deg, #000000 0%, #393939 100%);
+    background-color: #ffffff;
+    background-image: linear-gradient(135deg, #ffffff 0%, #f9fafb 100%);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -91,11 +92,12 @@
   }
 
   h1, h2, h3, h4, h5 { font-family: var(--font-display); letter-spacing: -0.02em; }
-  ::selection { background: oklch(0.58 0.24 295 / 0.4); color: white; }
+  ::selection { background: #89e90066; color: #0a0a0a; }
   ::-webkit-scrollbar { width: 10px; height: 10px; }
-  ::-webkit-scrollbar-track { background: oklch(0.18 0.04 265); }
+  ::-webkit-scrollbar-track { background: #f3f4f6; }
   ::-webkit-scrollbar-thumb { background: var(--gradient-primary); border-radius: 10px; }
 }
+
 
 @utility glass {
   background: var(--glass-bg);
