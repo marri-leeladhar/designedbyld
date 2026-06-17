@@ -7,6 +7,8 @@ import {
   PenSquare as Figma, Code2, Cpu, Camera, Check, Send, Star, Briefcase, Award, Zap,
   ArrowRight, X, Quote,
 } from "lucide-react";
+import ldLogo from "@/assets/ld-logo.png.asset.json";
+import ldHero from "@/assets/ld-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
