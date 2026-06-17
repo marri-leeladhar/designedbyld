@@ -883,9 +883,9 @@ function Contact() {
                   {["Brand Identity", "Social Media", "UI Design", "Marketing Creatives", "Presentation", "Other"].map(o => <option key={o}>{o}</option>)}
                 </select>
               </Field>
-              <Field label="Budget">
-                <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="input">
-                  {["< $500", "$500 - $1k", "$1k - $3k", "$3k - $10k", "$10k+"].map(o => <option key={o}>{o}</option>)}
+              <Field label="Timeline">
+                <select className="input" defaultValue="Flexible">
+                  {["ASAP", "2-4 weeks", "1-2 months", "Flexible"].map(o => <option key={o}>{o}</option>)}
                 </select>
               </Field>
               <Field label="Timeline">
