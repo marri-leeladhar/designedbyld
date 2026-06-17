@@ -537,11 +537,11 @@ function Portfolio_() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
                   <div className="absolute inset-x-0 bottom-0 p-6">
-                    <div className="mb-2 inline-block rounded-full bg-black/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
+                    <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
                     <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
                     <div className="mt-1 text-sm text-white/70">{p.role}</div>
                   </div>
-                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-black/10 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/20 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
                     <ArrowUpRight className="h-5 w-5 text-white" />
                   </div>
                 </motion.button>
@@ -566,7 +566,7 @@ function Portfolio_() {
               <div className="relative h-72 overflow-hidden" style={{ background: open.gradient }}>
                 <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                  <div className="mb-2 inline-block rounded-full bg-black/10 px-3 py-1 text-xs">{open.category}</div>
+                  <div className="mb-2 inline-block rounded-full bg-white/20 text-white px-3 py-1 text-xs">{open.category}</div>
                   <h3 className="font-display text-3xl font-bold text-white">{open.title}</h3>
                 </div>
               </div>
@@ -579,7 +579,7 @@ function Portfolio_() {
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Tools</div>
                     <div className="mt-1 flex flex-wrap gap-1.5">
-                      {open.tools.map(tt => <span key={tt} className="rounded-full bg-black/5 px-2 py-0.5 text-xs">{tt}</span>)}
+                      {open.tools.map(tt => <span key={tt} className="rounded-full bg-black/5 text-foreground px-2 py-0.5 text-xs">{tt}</span>)}
                     </div>
                   </div>
                 </div>
