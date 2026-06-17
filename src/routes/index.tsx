@@ -905,13 +905,13 @@ function Contact() {
 
       <style>{`
         .input {
-          width: 100%; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
-          border-radius: 0.875rem; padding: 0.875rem 1rem; color: white; font-size: 0.9rem;
+          width: 100%; background: #ffffff; border: 1px solid rgba(10,10,10,0.12);
+          border-radius: 0.875rem; padding: 0.875rem 1rem; color: #0a0a0a; font-size: 0.9rem;
           outline: none; transition: all .2s;
         }
-        .input:focus { border-color: oklch(0.74 0.13 210); box-shadow: 0 0 0 4px oklch(0.74 0.13 210 / 0.15); }
-        .input::placeholder { color: oklch(0.6 0.03 255); }
-        select.input option { background: #1E293B; }
+        .input:focus { border-color: #89e900; box-shadow: 0 0 0 4px #89e90033; }
+        .input::placeholder { color: #9ca3af; }
+        select.input option { background: #ffffff; color: #0a0a0a; }
       `}</style>
     </section>
   );
