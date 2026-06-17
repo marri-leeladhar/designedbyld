@@ -513,6 +513,15 @@ function Portfolio_() {
           ))}
         </div>
 
+        <div className="mb-10 flex justify-center">
+          <a href="https://www.instagram.com/designedby.ld" target="_blank" rel="noreferrer"
+            className="glass group inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-glow">
+            <Instagram className="h-4 w-4 text-accent" />
+            See more work live on <span className="text-gradient-primary font-semibold">@designedby.ld</span>
+            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </a>
+        </div>
+
         <motion.div layout className="grid auto-rows-[200px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((p, i) => {
