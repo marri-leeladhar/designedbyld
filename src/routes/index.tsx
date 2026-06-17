@@ -184,9 +184,9 @@ function Hero() {
       {/* gradient backdrop */}
       <div className="pointer-events-none absolute inset-0 gradient-hero" />
       {/* grid */}
-      <div className="pointer-events-none absolute inset-0 opacity-[0.15]"
+      <div className="pointer-events-none absolute inset-0 opacity-[0.18]"
         style={{
-          backgroundImage: "linear-gradient(to right, white 1px, transparent 1px), linear-gradient(to bottom, white 1px, transparent 1px)",
+          backgroundImage: "linear-gradient(to right, #0a0a0a 1px, transparent 1px), linear-gradient(to bottom, #0a0a0a 1px, transparent 1px)",
           backgroundSize: "60px 60px",
           maskImage: "radial-gradient(ellipse at center, black 30%, transparent 75%)",
         }} />
