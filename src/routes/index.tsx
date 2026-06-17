@@ -14,8 +14,8 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "DESIGNEDBYLD — Graphic Designer & Visual Storyteller" },
-      { name: "description", content: "Premium portfolio of DESIGNEDBYLD — Graphic Designer in Vijayawada, India. Brand identity, social media design, and creative technology." },
-      { property: "og:title", content: "DESIGNEDBYLD — Graphic Designer" },
+      { name: "description", content: "Premium portfolio of designedby.ld — Graphic Designer in India. Brand identity, social media design, and creative technology." },
+      { property: "og:title", content: "designedby.ld — Graphic Designer" },
       { property: "og:description", content: "Designing brands that people remember." },
     ],
   }),
