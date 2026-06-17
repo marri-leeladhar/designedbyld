@@ -129,10 +129,10 @@ function Nav() {
     >
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-all ${scrolled ? "" : ""}`}>
         <a href="#top" className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-xl gradient-primary shadow-glow">
-            <span className="font-display text-sm font-bold text-white">LM</span>
+          <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black shadow-glow ring-1 ring-accent/40">
+            <img src={ldLogo.url} alt="designedby.ld logo" className="h-full w-full object-cover" />
           </div>
-          <span className="hidden font-display text-sm font-semibold sm:block">DESIGNEDBYLD.</span>
+          <span className="hidden font-display text-sm font-semibold tracking-tight sm:block">designedby.ld</span>
         </a>
         <nav className="glass hidden items-center gap-1 rounded-full px-2 py-2 md:flex">
           {links.map(([l, h]) => (
