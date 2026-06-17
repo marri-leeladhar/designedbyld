@@ -91,7 +91,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         url: "/",
         email: "marrileela17@gmail.com",
         telephone: "+91-7815982351",
-        address: { "@type": "PostalAddress", addressLocality: "Vijayawada", addressRegion: "Andhra Pradesh", addressCountry: "IN" },
+        address: { "@type": "PostalAddress", addressCountry: "IN" },
         sameAs: ["https://linkedin.com/in/marri-leeladhar"],
       }),
     }],
