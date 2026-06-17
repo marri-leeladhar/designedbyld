@@ -938,13 +938,13 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary shadow-glow">
-                <span className="font-display text-sm font-bold text-white">LM</span>
+              <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black ring-1 ring-accent/40 shadow-glow">
+                <img src={ldLogo.url} alt="designedby.ld" className="h-full w-full object-cover" />
               </div>
-              <span className="font-display text-lg font-semibold">DESIGNEDBYLD</span>
+              <span className="font-display text-lg font-semibold">designedby.ld</span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Graphic Designer & Visual Storyteller crafting brands, campaigns and interfaces from Vijayawada, India.
+              Graphic Designer & Visual Storyteller crafting brands, campaigns and interfaces from India.
             </p>
             <div className="mt-5 flex gap-3">
               {socials.map(s => (
@@ -968,12 +968,12 @@ function Footer() {
             <ul className="space-y-2 text-sm text-foreground/80">
               <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-accent" /> marrileela17@gmail.com</li>
               <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-accent" /> +91 7815982351</li>
-              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-accent" /> Vijayawada, India</li>
+              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-accent" /> India</li>
             </ul>
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground md:flex-row">
-          <div>© {new Date().getFullYear()} DESIGNEDBYLD. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} designedby.ld. All rights reserved.</div>
           <div className="flex items-center gap-1.5">Designed & coded with <Zap className="h-3.5 w-3.5 text-accent" /> in India</div>
         </div>
       </div>
