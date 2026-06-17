@@ -728,7 +728,7 @@ function Resume() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Resume</div>
-                    <div className="mt-1 font-display text-xl font-bold">DESIGNEDBYLD</div>
+                    <div className="mt-1 font-display text-xl font-bold">designedby.ld</div>
                   </div>
                   <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary"><span className="text-sm font-bold text-white">PDF</span></div>
                 </div>
