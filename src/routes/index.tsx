@@ -13,7 +13,7 @@ import ldHero from "@/assets/ld-hero.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DESIGNEDBYLD — Graphic Designer & Visual Storyteller" },
+      { title: "designedby.ld — Graphic Designer & Visual Storyteller" },
       { name: "description", content: "Premium portfolio of designedby.ld — Graphic Designer in India. Brand identity, social media design, and creative technology." },
       { property: "og:title", content: "designedby.ld — Graphic Designer" },
       { property: "og:description", content: "Designing brands that people remember." },
@@ -313,7 +313,7 @@ function About() {
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="lg:col-span-7">
             <p className="text-xl leading-relaxed text-foreground/90">
-              I'm <span className="font-semibold text-gradient">DESIGNEDBYLD</span> — a graphic designer and visual storyteller blending <span className="text-foreground">creative design</span>, <span className="text-foreground">technology</span>, and <span className="text-foreground">content creation</span> to build brands people actually remember.
+              I'm <span className="font-semibold text-gradient">designedby.ld</span> — a graphic designer and visual storyteller blending <span className="text-foreground">creative design</span>, <span className="text-foreground">technology</span>, and <span className="text-foreground">content creation</span> to build brands people actually remember.
             </p>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               I craft brand identities, social media systems, marketing creatives, presentations and UI — turning ideas into visuals that move metrics and emotions. With a foundation in React, Python, and modern AI tools, I move fast from concept to a polished, production-ready outcome.
@@ -661,10 +661,10 @@ function Achievements() {
 /* ---------------- Testimonials ---------------- */
 
 const testimonials = [
-  { n: "Priya Sharma", co: "Marketing Lead, InAmigos Foundation", r: "DESIGNEDBYLD's visual storytelling brought our campaigns to life. The engagement jumped overnight.", a: "PS", g: "linear-gradient(135deg,#7C3AED,#06B6D4)" },
+  { n: "Priya Sharma", co: "Marketing Lead, InAmigos Foundation", r: "designedby.ld's visual storytelling brought our campaigns to life. The engagement jumped overnight.", a: "PS", g: "linear-gradient(135deg,#7C3AED,#06B6D4)" },
   { n: "Rohit Verma", co: "Founder, Brewline Coffee", r: "He understood the brand instantly. The identity system he built feels like it's been there forever.", a: "RV", g: "linear-gradient(135deg,#06B6D4,#2563EB)" },
   { n: "Ananya Reddy", co: "Product Manager, EduTech", r: "Pixel-perfect UI work with sharp UX thinking. Easily one of the best designers I've collaborated with.", a: "AR", g: "linear-gradient(135deg,#F59E0B,#E11D48)" },
-  { n: "Karthik Iyer", co: "Creative Director, Studio Nine", r: "Rare combo — design taste, technical depth, and content sense. DESIGNEDBYLD ships at agency quality.", a: "KI", g: "linear-gradient(135deg,#10B981,#06B6D4)" },
+  { n: "Karthik Iyer", co: "Creative Director, Studio Nine", r: "Rare combo — design taste, technical depth, and content sense. designedby.ld ships at agency quality.", a: "KI", g: "linear-gradient(135deg,#10B981,#06B6D4)" },
 ];
 
 function Testimonials() {
