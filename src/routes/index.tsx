@@ -136,7 +136,7 @@ function Nav() {
         </a>
         <nav className="glass hidden items-center gap-1 rounded-full px-2 py-2 md:flex">
           {links.map(([l, h]) => (
-            <a key={h} href={h} className="rounded-full px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-white/5 hover:text-foreground">{l}</a>
+            <a key={h} href={h} className="rounded-full px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-black/5 hover:text-foreground">{l}</a>
           ))}
         </nav>
         <MagneticButton href="#contact" className="hidden rounded-full gradient-primary px-5 py-2.5 text-sm font-medium text-white shadow-glow md:inline-flex">
@@ -152,7 +152,7 @@ function Nav() {
             className="mx-6 mt-3 md:hidden">
             <div className="glass flex flex-col gap-1 rounded-2xl p-3">
               {links.map(([l, h]) => (
-                <a key={h} href={h} onClick={() => setOpen(false)} className="rounded-xl px-4 py-3 text-sm hover:bg-white/5">{l}</a>
+                <a key={h} href={h} onClick={() => setOpen(false)} className="rounded-xl px-4 py-3 text-sm hover:bg-black/5">{l}</a>
               ))}
               <a href="#contact" onClick={() => setOpen(false)} className="mt-1 rounded-xl gradient-primary px-4 py-3 text-center text-sm font-medium">Hire Me</a>
             </div>
@@ -386,7 +386,7 @@ function Skills() {
                         <span className="text-foreground/90">{it.name}</span>
                         <span className="text-muted-foreground">{it.level}%</span>
                       </div>
-                      <div className="h-1.5 overflow-hidden rounded-full bg-white/5">
+                      <div className="h-1.5 overflow-hidden rounded-full bg-black/5">
                         <motion.div
                           initial={{ width: 0 }} whileInView={{ width: `${it.level}%` }}
                           viewport={{ once: true }}
@@ -432,14 +432,14 @@ function Services() {
               <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 gradient-primary" />
               <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                 style={{ background: "radial-gradient(circle at 50% 0%, oklch(0.74 0.13 210 / 0.2), transparent 60%)" }} />
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/5 transition-all duration-500 group-hover:bg-white/15">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-black/5 transition-all duration-500 group-hover:bg-black/10">
                 <s.icon className="h-7 w-7 text-accent transition-colors group-hover:text-white" />
               </div>
               <h3 className="mt-6 font-display text-2xl font-bold transition-colors group-hover:text-white">{s.t}</h3>
               <p className="mt-2 text-sm text-muted-foreground transition-colors group-hover:text-white/80">{s.d}</p>
               <div className="mt-5 flex flex-wrap gap-2">
                 {s.tags.map(tg => (
-                  <span key={tg} className="rounded-full border border-white/10 px-3 py-1 text-xs text-muted-foreground transition-colors group-hover:border-white/30 group-hover:text-white/90">{tg}</span>
+                  <span key={tg} className="rounded-full border border-black/10 px-3 py-1 text-xs text-muted-foreground transition-colors group-hover:border-black/30 group-hover:text-white/90">{tg}</span>
                 ))}
               </div>
               <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors group-hover:text-white">
@@ -519,11 +519,11 @@ function Portfolio_() {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                   <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
                   <div className="absolute inset-x-0 bottom-0 p-6">
-                    <div className="mb-2 inline-block rounded-full bg-white/15 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
+                    <div className="mb-2 inline-block rounded-full bg-black/10 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
                     <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
                     <div className="mt-1 text-sm text-white/70">{p.role}</div>
                   </div>
-                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/15 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-black/10 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
                     <ArrowUpRight className="h-5 w-5 text-white" />
                   </div>
                 </motion.button>
@@ -548,7 +548,7 @@ function Portfolio_() {
               <div className="relative h-72 overflow-hidden" style={{ background: open.gradient }}>
                 <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
-                  <div className="mb-2 inline-block rounded-full bg-white/15 px-3 py-1 text-xs">{open.category}</div>
+                  <div className="mb-2 inline-block rounded-full bg-black/10 px-3 py-1 text-xs">{open.category}</div>
                   <h3 className="font-display text-3xl font-bold text-white">{open.title}</h3>
                 </div>
               </div>
@@ -561,7 +561,7 @@ function Portfolio_() {
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Tools</div>
                     <div className="mt-1 flex flex-wrap gap-1.5">
-                      {open.tools.map(tt => <span key={tt} className="rounded-full bg-white/10 px-2 py-0.5 text-xs">{tt}</span>)}
+                      {open.tools.map(tt => <span key={tt} className="rounded-full bg-black/5 px-2 py-0.5 text-xs">{tt}</span>)}
                     </div>
                   </div>
                 </div>
@@ -608,7 +608,7 @@ function Experience() {
                   <div className="mt-1 text-sm text-muted-foreground">{e.co}</div>
                   <ul className={`mt-4 flex flex-wrap gap-2 ${i % 2 === 0 ? "md:justify-end" : ""}`}>
                     {e.items.map(it => (
-                      <li key={it} className="rounded-full bg-white/5 px-3 py-1 text-xs text-muted-foreground">{it}</li>
+                      <li key={it} className="rounded-full bg-black/5 px-3 py-1 text-xs text-muted-foreground">{it}</li>
                     ))}
                   </ul>
                 </div>
@@ -716,7 +716,7 @@ function Resume() {
                 <MagneticButton href="#contact" className="rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
                   <Download className="h-4 w-4" /> Download Resume
                 </MagneticButton>
-                <MagneticButton href="mailto:marrileela17@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
+                <MagneticButton href="mailto:designedbyld25@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
                   <Mail className="h-4 w-4" /> Email Me
                 </MagneticButton>
               </div>
@@ -736,12 +736,12 @@ function Resume() {
                   {[80, 60, 90, 50, 75, 65, 85, 55, 70].map((w, i) => (
                     <motion.div key={i} initial={{ width: 0 }} whileInView={{ width: `${w}%` }}
                       viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.8 }}
-                      className="h-2 rounded-full bg-white/10" />
+                      className="h-2 rounded-full bg-black/5" />
                   ))}
                 </div>
                 <div className="mt-6 grid grid-cols-3 gap-2">
                   {["Figma", "PS", "React"].map(t => (
-                    <div key={t} className="rounded-lg bg-white/5 p-3 text-center text-xs font-medium">{t}</div>
+                    <div key={t} className="rounded-lg bg-black/5 p-3 text-center text-xs font-medium">{t}</div>
                   ))}
                 </div>
               </motion.div>
@@ -755,7 +755,7 @@ function Resume() {
 
 const socials = [
   { n: "LinkedIn", h: "https://linkedin.com/in/marri-leeladhar", icon: Linkedin, g: "linear-gradient(135deg,#0A66C2,#2563EB)" },
-  { n: "Instagram", h: "https://instagram.com", icon: Instagram, g: "linear-gradient(135deg,#E11D48,#7C3AED)" },
+  { n: "Instagram", h: "https://www.instagram.com/designedby.ld", icon: Instagram, g: "linear-gradient(135deg,#E11D48,#7C3AED)" },
   { n: "Behance", h: "https://behance.net", icon: Layers, g: "linear-gradient(135deg,#2563EB,#06B6D4)" },
   { n: "Dribbble", h: "https://dribbble.com", icon: Sparkles, g: "linear-gradient(135deg,#EC4899,#F59E0B)" },
 ];
@@ -773,12 +773,12 @@ function Socials() {
               className="group glass relative flex items-center justify-between overflow-hidden rounded-2xl p-6">
               <div className="absolute inset-0 -z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" style={{ background: s.g }} />
               <div className="flex items-center gap-4">
-                <div className="grid h-12 w-12 place-items-center rounded-xl bg-white/10 transition-colors group-hover:bg-white/20">
+                <div className="grid h-12 w-12 place-items-center rounded-xl bg-black/5 transition-colors group-hover:bg-black/10">
                   <s.icon className="h-5 w-5 transition-colors group-hover:text-white" />
                 </div>
                 <div>
                   <div className="font-semibold transition-colors group-hover:text-white">{s.n}</div>
-                  <div className="text-xs text-muted-foreground transition-colors group-hover:text-white/80">@marrileeladhar</div>
+                  <div className="text-xs text-muted-foreground transition-colors group-hover:text-white/80">@designedby.ld</div>
                 </div>
               </div>
               <ArrowUpRight className="h-5 w-5 transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white" />
@@ -807,7 +807,7 @@ function Contact() {
     if (Object.keys(er).length) return;
     const subject = `New project inquiry from ${form.name}`;
     const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nType: ${form.type}\n\n${form.message}`;
-    window.location.href = `mailto:marrileela17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:designedbyld25@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
 
@@ -821,7 +821,7 @@ function Contact() {
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="space-y-4 lg:col-span-4">
             {[
-              { icon: Mail, l: "Email", v: "marrileela17@gmail.com", h: "mailto:marrileela17@gmail.com" },
+              { icon: Mail, l: "Email", v: "designedbyld25@gmail.com", h: "mailto:designedbyld25@gmail.com" },
               { icon: Phone, l: "Phone", v: "+91 7815982351", h: "tel:+917815982351" },
               { icon: Linkedin, l: "LinkedIn", v: "marri-leeladhar", h: "https://linkedin.com/in/marri-leeladhar" },
             ].map((c) => {
@@ -933,7 +933,7 @@ function Field({ label, children, err }: { label: string; children: ReactNode; e
 
 function Footer() {
   return (
-    <footer className="relative border-t border-white/5 px-6 py-14">
+    <footer className="relative border-t border-black/10 px-6 py-14">
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
@@ -966,13 +966,13 @@ function Footer() {
           <div>
             <div className="mb-4 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Contact</div>
             <ul className="space-y-2 text-sm text-foreground/80">
-              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-accent" /> marrileela17@gmail.com</li>
+              <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-accent" /> designedbyld25@gmail.com</li>
               <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-accent" /> +91 7815982351</li>
               <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-accent" /> India</li>
             </ul>
           </div>
         </div>
-        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground md:flex-row">
+        <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-black/10 pt-6 text-xs text-muted-foreground md:flex-row">
           <div>© {new Date().getFullYear()} designedby.ld. All rights reserved.</div>
           <div className="flex items-center gap-1.5">Designed & coded with <Zap className="h-3.5 w-3.5 text-accent" /> in India</div>
         </div>
