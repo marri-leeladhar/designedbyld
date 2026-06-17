@@ -7,13 +7,15 @@ import {
   PenSquare as Figma, Code2, Cpu, Camera, Check, Send, Star, Briefcase, Award, Zap,
   ArrowRight, X, Quote,
 } from "lucide-react";
+import ldLogo from "@/assets/ld-logo.png.asset.json";
+import ldHero from "@/assets/ld-hero.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "DESIGNEDBYLD — Graphic Designer & Visual Storyteller" },
-      { name: "description", content: "Premium portfolio of DESIGNEDBYLD — Graphic Designer in Vijayawada, India. Brand identity, social media design, and creative technology." },
-      { property: "og:title", content: "DESIGNEDBYLD — Graphic Designer" },
+      { title: "designedby.ld — Graphic Designer & Visual Storyteller" },
+      { name: "description", content: "Premium portfolio of designedby.ld — Graphic Designer in India. Brand identity, social media design, and creative technology." },
+      { property: "og:title", content: "designedby.ld — Graphic Designer" },
       { property: "og:description", content: "Designing brands that people remember." },
     ],
   }),
@@ -127,10 +129,10 @@ function Nav() {
     >
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-all ${scrolled ? "" : ""}`}>
         <a href="#top" className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-xl gradient-primary shadow-glow">
-            <span className="font-display text-sm font-bold text-white">LM</span>
+          <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black shadow-glow ring-1 ring-accent/40">
+            <img src={ldLogo.url} alt="designedby.ld logo" className="h-full w-full object-cover" />
           </div>
-          <span className="hidden font-display text-sm font-semibold sm:block">DESIGNEDBYLD.</span>
+          <span className="hidden font-display text-sm font-semibold tracking-tight sm:block">designedby.ld</span>
         </a>
         <nav className="glass hidden items-center gap-1 rounded-full px-2 py-2 md:flex">
           {links.map(([l, h]) => (
@@ -281,23 +283,21 @@ function About() {
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="lg:col-span-5">
             <div className="glass relative overflow-hidden rounded-3xl p-1">
-              <div className="aspect-[4/5] w-full rounded-[1.4rem] gradient-primary p-10">
-                <div className="flex h-full flex-col justify-between text-white">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs uppercase tracking-[0.3em] opacity-80">Designer</span>
-                    <Sparkles className="h-5 w-5" />
-                  </div>
+              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.4rem]">
+                <img src={ldHero.url} alt="designedby.ld at work" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 text-white">
                   <div>
-                    <div className="font-display text-6xl font-bold leading-none">LM</div>
-                    <div className="mt-4 text-2xl font-semibold">DESIGNEDBYLD</div>
-                    <div className="mt-1 text-sm opacity-80">Vijayawada · India</div>
+                    <div className="font-display text-3xl font-bold leading-none">designedby.ld</div>
+                    <div className="mt-1 text-sm text-accent">Designer · Storyteller</div>
                   </div>
+                  <Sparkles className="h-5 w-5 text-accent" />
                 </div>
               </div>
             </div>
             <div className="mt-6 grid grid-cols-2 gap-3">
               {[
-                { l: "Based in", v: "Vijayawada, IN" },
+                { l: "Based in", v: "India" },
                 { l: "Focus", v: "Brand · Social · UI" },
                 { l: "Experience", v: "2+ Years" },
                 { l: "Availability", v: "Open to work" },
@@ -313,7 +313,7 @@ function About() {
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="lg:col-span-7">
             <p className="text-xl leading-relaxed text-foreground/90">
-              I'm <span className="font-semibold text-gradient">DESIGNEDBYLD</span> — a graphic designer and visual storyteller blending <span className="text-foreground">creative design</span>, <span className="text-foreground">technology</span>, and <span className="text-foreground">content creation</span> to build brands people actually remember.
+              I'm <span className="font-semibold text-gradient">designedby.ld</span> — a graphic designer and visual storyteller blending <span className="text-foreground">creative design</span>, <span className="text-foreground">technology</span>, and <span className="text-foreground">content creation</span> to build brands people actually remember.
             </p>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
               I craft brand identities, social media systems, marketing creatives, presentations and UI — turning ideas into visuals that move metrics and emotions. With a foundation in React, Python, and modern AI tools, I move fast from concept to a polished, production-ready outcome.
@@ -661,10 +661,10 @@ function Achievements() {
 /* ---------------- Testimonials ---------------- */
 
 const testimonials = [
-  { n: "Priya Sharma", co: "Marketing Lead, InAmigos Foundation", r: "DESIGNEDBYLD's visual storytelling brought our campaigns to life. The engagement jumped overnight.", a: "PS", g: "linear-gradient(135deg,#7C3AED,#06B6D4)" },
+  { n: "Priya Sharma", co: "Marketing Lead, InAmigos Foundation", r: "designedby.ld's visual storytelling brought our campaigns to life. The engagement jumped overnight.", a: "PS", g: "linear-gradient(135deg,#7C3AED,#06B6D4)" },
   { n: "Rohit Verma", co: "Founder, Brewline Coffee", r: "He understood the brand instantly. The identity system he built feels like it's been there forever.", a: "RV", g: "linear-gradient(135deg,#06B6D4,#2563EB)" },
   { n: "Ananya Reddy", co: "Product Manager, EduTech", r: "Pixel-perfect UI work with sharp UX thinking. Easily one of the best designers I've collaborated with.", a: "AR", g: "linear-gradient(135deg,#F59E0B,#E11D48)" },
-  { n: "Karthik Iyer", co: "Creative Director, Studio Nine", r: "Rare combo — design taste, technical depth, and content sense. DESIGNEDBYLD ships at agency quality.", a: "KI", g: "linear-gradient(135deg,#10B981,#06B6D4)" },
+  { n: "Karthik Iyer", co: "Creative Director, Studio Nine", r: "Rare combo — design taste, technical depth, and content sense. designedby.ld ships at agency quality.", a: "KI", g: "linear-gradient(135deg,#10B981,#06B6D4)" },
 ];
 
 function Testimonials() {
@@ -728,7 +728,7 @@ function Resume() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Resume</div>
-                    <div className="mt-1 font-display text-xl font-bold">DESIGNEDBYLD</div>
+                    <div className="mt-1 font-display text-xl font-bold">designedby.ld</div>
                   </div>
                   <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary"><span className="text-sm font-bold text-white">PDF</span></div>
                 </div>
@@ -795,7 +795,7 @@ function Socials() {
 function Contact() {
   const [sent, setSent] = useState(false);
   const [errs, setErrs] = useState<Record<string,string>>({});
-  const [form, setForm] = useState({ name: "", email: "", phone: "", type: "Brand Identity", budget: "$500 - $1k", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", type: "Brand Identity", message: "" });
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -806,7 +806,7 @@ function Contact() {
     setErrs(er);
     if (Object.keys(er).length) return;
     const subject = `New project inquiry from ${form.name}`;
-    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nType: ${form.type}\nBudget: ${form.budget}\n\n${form.message}`;
+    const body = `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}\nType: ${form.type}\n\n${form.message}`;
     window.location.href = `mailto:marrileela17@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     setSent(true);
   };
@@ -823,7 +823,6 @@ function Contact() {
             {[
               { icon: Mail, l: "Email", v: "marrileela17@gmail.com", h: "mailto:marrileela17@gmail.com" },
               { icon: Phone, l: "Phone", v: "+91 7815982351", h: "tel:+917815982351" },
-              { icon: MapPin, l: "Location", v: "Vijayawada, AP, India" },
               { icon: Linkedin, l: "LinkedIn", v: "marri-leeladhar", h: "https://linkedin.com/in/marri-leeladhar" },
             ].map((c) => {
               const Comp: any = c.h ? "a" : "div";
@@ -883,11 +882,6 @@ function Contact() {
                   {["Brand Identity", "Social Media", "UI Design", "Marketing Creatives", "Presentation", "Other"].map(o => <option key={o}>{o}</option>)}
                 </select>
               </Field>
-              <Field label="Budget">
-                <select value={form.budget} onChange={(e) => setForm({ ...form, budget: e.target.value })} className="input">
-                  {["< $500", "$500 - $1k", "$1k - $3k", "$3k - $10k", "$10k+"].map(o => <option key={o}>{o}</option>)}
-                </select>
-              </Field>
               <Field label="Timeline">
                 <select className="input" defaultValue="Flexible">
                   {["ASAP", "2-4 weeks", "1-2 months", "Flexible"].map(o => <option key={o}>{o}</option>)}
@@ -944,13 +938,13 @@ function Footer() {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
-              <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary shadow-glow">
-                <span className="font-display text-sm font-bold text-white">LM</span>
+              <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black ring-1 ring-accent/40 shadow-glow">
+                <img src={ldLogo.url} alt="designedby.ld" className="h-full w-full object-cover" />
               </div>
-              <span className="font-display text-lg font-semibold">DESIGNEDBYLD</span>
+              <span className="font-display text-lg font-semibold">designedby.ld</span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
-              Graphic Designer & Visual Storyteller crafting brands, campaigns and interfaces from Vijayawada, India.
+              Graphic Designer & Visual Storyteller crafting brands, campaigns and interfaces from India.
             </p>
             <div className="mt-5 flex gap-3">
               {socials.map(s => (
@@ -974,12 +968,12 @@ function Footer() {
             <ul className="space-y-2 text-sm text-foreground/80">
               <li className="flex items-start gap-2"><Mail className="mt-0.5 h-4 w-4 text-accent" /> marrileela17@gmail.com</li>
               <li className="flex items-start gap-2"><Phone className="mt-0.5 h-4 w-4 text-accent" /> +91 7815982351</li>
-              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-accent" /> Vijayawada, India</li>
+              <li className="flex items-start gap-2"><MapPin className="mt-0.5 h-4 w-4 text-accent" /> India</li>
             </ul>
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-muted-foreground md:flex-row">
-          <div>© {new Date().getFullYear()} DESIGNEDBYLD. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} designedby.ld. All rights reserved.</div>
           <div className="flex items-center gap-1.5">Designed & coded with <Zap className="h-3.5 w-3.5 text-accent" /> in India</div>
         </div>
       </div>
