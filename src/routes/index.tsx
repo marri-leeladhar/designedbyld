@@ -796,9 +796,10 @@ function Resume() {
               <h2 className="mt-5 font-display text-4xl font-bold md:text-5xl">Grab the full <span className="text-gradient">CV</span>.</h2>
               <p className="mt-4 text-muted-foreground">A concise one-page resume with experience, education, tools and project highlights — ready to share with your team.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <MagneticButton href="#contact" className="rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
+                <a href={resumePdf.url} download="Leeladhar_Designer.pdf" target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
                   <Download className="h-4 w-4" /> Download Resume
-                </MagneticButton>
+                </a>
                 <MagneticButton href="mailto:designedbyld25@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
                   <Mail className="h-4 w-4" /> Email Me
                 </MagneticButton>
