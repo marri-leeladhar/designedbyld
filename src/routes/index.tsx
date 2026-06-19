@@ -618,9 +618,13 @@ function Portfolio_() {
               <button onClick={() => setOpen(null)} className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/40 backdrop-blur transition-colors hover:bg-black/60">
                 <X className="h-5 w-5" />
               </button>
-              <div className="relative h-72 overflow-hidden" style={{ background: open.gradient }}>
-                <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+              <div className="relative h-80 overflow-hidden" style={{ background: open.gradient }}>
+                {open.image ? (
+                  <img src={open.image} alt={open.title} className="absolute inset-0 h-full w-full object-cover" />
+                ) : (
+                  <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
+                )}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-8">
                   <div className="mb-2 inline-block rounded-full bg-white/20 text-white px-3 py-1 text-xs">{open.category}</div>
                   <h3 className="font-display text-3xl font-bold text-white">{open.title}</h3>
                 </div>
@@ -639,6 +643,12 @@ function Portfolio_() {
                   </div>
                 </div>
                 <p className="mt-6 leading-relaxed text-muted-foreground">{open.description}</p>
+                {open.link && (
+                  <a href={open.link} target="_blank" rel="noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full gradient-primary px-5 py-2.5 text-sm font-medium text-white shadow-glow">
+                    View Case Study <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </motion.div>
           </motion.div>
