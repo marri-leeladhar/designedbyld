@@ -9,6 +9,15 @@ import {
 } from "lucide-react";
 import ldLogo from "@/assets/ld-logo.png.asset.json";
 import ldHero from "@/assets/ld-hero.png.asset.json";
+import ldPortrait from "@/assets/ld-portrait.png.asset.json";
+import resumePdf from "@/assets/Leeladhar_Designer.pdf.asset.json";
+import udaanPdf from "@/assets/Udaan_Task5.pdf.asset.json";
+import work1 from "@/assets/work-1.png.asset.json";
+import work2 from "@/assets/work-2.png.asset.json";
+import work3 from "@/assets/work-3.png.asset.json";
+import workA from "@/assets/work-a.png.asset.json";
+import workMaaza from "@/assets/work-maaza.png.asset.json";
+import workPulse from "@/assets/work-pulse.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
