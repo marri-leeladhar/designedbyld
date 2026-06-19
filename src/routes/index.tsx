@@ -18,6 +18,9 @@ import work3 from "@/assets/work-3.png.asset.json";
 import workA from "@/assets/work-a.png.asset.json";
 import workMaaza from "@/assets/work-maaza.png.asset.json";
 import workPulse from "@/assets/work-pulse.png.asset.json";
+import posterAdidas from "@/assets/poster-adidas.png.asset.json";
+import posterDio from "@/assets/poster-dio.png.asset.json";
+import posterMaaza from "@/assets/poster-maaza.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
