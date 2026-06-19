@@ -1073,9 +1073,22 @@ function ScrollProgress() {
   return <motion.div style={{ width: w }} className="fixed left-0 top-0 z-[60] h-0.5 gradient-accent" />;
 }
 
+function GlobalShapes() {
+  return (
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute -left-32 top-[10%] h-[28rem] w-[28rem] rounded-full bg-primary/25 blur-3xl animate-float-slow" />
+      <div className="absolute right-[-10%] top-[35%] h-[32rem] w-[32rem] rounded-full bg-accent/20 blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
+      <div className="absolute left-[20%] top-[65%] h-[26rem] w-[26rem] rounded-full bg-primary/20 blur-3xl animate-float-slow" style={{ animationDelay: "4s" }} />
+      <div className="absolute right-[15%] bottom-[5%] h-[24rem] w-[24rem] rounded-full bg-accent/25 blur-3xl animate-float-slow" style={{ animationDelay: "1s" }} />
+      <div className="absolute left-[50%] top-[90%] h-72 w-72 -translate-x-1/2 rounded-full bg-primary/30 blur-3xl animate-float-slow" style={{ animationDelay: "3s" }} />
+    </div>
+  );
+}
+
 function Portfolio() {
   return (
     <main className="relative">
+      <GlobalShapes />
       <ScrollProgress />
       <Nav />
       <Hero />
@@ -1093,3 +1106,4 @@ function Portfolio() {
     </main>
   );
 }
+
