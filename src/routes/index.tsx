@@ -9,6 +9,15 @@ import {
 } from "lucide-react";
 import ldLogo from "@/assets/ld-logo.png.asset.json";
 import ldHero from "@/assets/ld-hero.png.asset.json";
+import ldPortrait from "@/assets/ld-portrait.png.asset.json";
+import resumePdf from "@/assets/Leeladhar_Designer.pdf.asset.json";
+import udaanPdf from "@/assets/Udaan_Task5.pdf.asset.json";
+import work1 from "@/assets/work-1.png.asset.json";
+import work2 from "@/assets/work-2.png.asset.json";
+import work3 from "@/assets/work-3.png.asset.json";
+import workA from "@/assets/work-a.png.asset.json";
+import workMaaza from "@/assets/work-maaza.png.asset.json";
+import workPulse from "@/assets/work-pulse.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -212,62 +221,90 @@ function Hero() {
         </div>
       </motion.div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pb-24 pt-12 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-          </span>
-          Available for freelance & full-time
-        </motion.div>
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-24 pt-12 lg:grid-cols-2 lg:gap-8">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Available for freelance & full-time
+          </motion.div>
 
-        <h1 className="mt-8 max-w-5xl text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-[5.5rem]">
-          {"Designing Brands".split(" ").map((w, i) => (
-            <motion.span key={i} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.08 }} className="mr-4 inline-block">{w}</motion.span>
-          ))}
-          <br />
-          <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-            className="inline-block">That People </motion.span>
-          <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
-            className="inline-block text-gradient">Remember</motion.span>
-        </h1>
-
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-          className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          Graphic Designer · Visual Storyteller · Content Creator — crafting visual experiences that connect, inspire, and convert.
-        </motion.p>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <MagneticButton href="#work" className="rounded-full gradient-primary px-7 py-3.5 text-sm font-medium text-white shadow-glow">
-            View Projects <ArrowRight className="h-4 w-4" />
-          </MagneticButton>
-          <MagneticButton href="#resume" className="glass rounded-full px-7 py-3.5 text-sm font-medium text-foreground">
-            <Download className="h-4 w-4" /> Download Resume
-          </MagneticButton>
-          <MagneticButton href="#contact" className="rounded-full border border-accent/40 bg-accent/10 px-7 py-3.5 text-sm font-medium text-accent">
-            Hire Me <Sparkles className="h-4 w-4" />
-          </MagneticButton>
-        </motion.div>
-
-        {/* marquee tools */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-          className="mt-20 w-full">
-          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">Tools of the craft</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-muted-foreground">
-            {["Figma", "Photoshop", "Illustrator", "Canva", "CapCut", "React", "Framer", "AI Tools"].map((t, i) => (
-              <motion.span key={t} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 + i * 0.05 }}
-                className="font-display text-lg font-medium tracking-tight transition-colors hover:text-foreground">{t}</motion.span>
+          <h1 className="mt-8 max-w-2xl text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-[4.5rem]">
+            {"Designing Brands".split(" ").map((w, i) => (
+              <motion.span key={i} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.08 }} className="mr-4 inline-block">{w}</motion.span>
             ))}
+            <br />
+            <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
+              className="inline-block">That People </motion.span>
+            <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
+              className="inline-block text-gradient">Remember</motion.span>
+          </h1>
+
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+            className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
+            Graphic Designer · Visual Storyteller · Content Creator — crafting visual experiences that connect, inspire, and convert.
+          </motion.p>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+            <MagneticButton href="#work" className="rounded-full gradient-primary px-7 py-3.5 text-sm font-medium text-white shadow-glow">
+              View Projects <ArrowRight className="h-4 w-4" />
+            </MagneticButton>
+            <a href={resumePdf.url} download="Leeladhar_Designer.pdf" target="_blank" rel="noreferrer"
+              className="glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-foreground">
+              <Download className="h-4 w-4" /> Download Resume
+            </a>
+            <MagneticButton href="#contact" className="rounded-full border border-accent/40 bg-accent/10 px-7 py-3.5 text-sm font-medium text-accent">
+              Hire Me <Sparkles className="h-4 w-4" />
+            </MagneticButton>
+          </motion.div>
+        </div>
+
+        {/* Portrait */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          style={{ x: px, y: py }}
+          className="relative mx-auto w-full max-w-xl">
+          <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-primary/30 blur-3xl" />
+          <div className="absolute -inset-2 -z-10 rounded-[2rem] gradient-primary opacity-40 blur-2xl" />
+          <div className="glass relative overflow-hidden rounded-[2rem] p-1.5 shadow-glow">
+            <img src={ldPortrait.url} alt="designedby.ld portrait" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
           </div>
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
+            className="glass absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl p-4 shadow-glow sm:flex">
+            <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary">
+              <Sparkles className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">Now</div>
+              <div className="text-sm font-semibold">Open to work</div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
+
+      {/* marquee tools */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 text-center">
+        <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">Tools of the craft</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-muted-foreground">
+          {["Figma", "Photoshop", "Illustrator", "Canva", "CapCut", "React", "Framer", "AI Tools"].map((t, i) => (
+            <motion.span key={t} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 + i * 0.05 }}
+              className="font-display text-lg font-medium tracking-tight transition-colors hover:text-foreground">{t}</motion.span>
+          ))}
+        </div>
+      </motion.div>
     </section>
   );
 }
+
+
 
 /* ---------------- About ---------------- */
 
@@ -458,38 +495,49 @@ function Services() {
 type Project = {
   id: string; title: string; role: string; category: string; description: string;
   tools: string[]; gradient: string; emoji: string; size: "sm" | "md" | "lg";
+  image?: string; link?: string;
 };
 
 const projects: Project[] = [
-  { id: "p1", title: "Women Empowerment Campaign", role: "Lead Designer", category: "Campaigns",
-    description: "Impactful visual creatives, infographics, and social media content supporting women empowerment initiatives across digital platforms.",
-    tools: ["Canva", "Photoshop", "Figma"],
-    gradient: "linear-gradient(135deg, #7C3AED, #06B6D4)", emoji: "✊", size: "lg" },
-  { id: "p2", title: "InAmigos Foundation Campaign", role: "Content Designer", category: "Content Design",
-    description: "Article visuals and campaign creatives focused on social causes and youth development for the InAmigos Foundation.",
-    tools: ["Figma", "Photoshop"], gradient: "linear-gradient(135deg, #06B6D4, #2563EB)", emoji: "📰", size: "md" },
-  { id: "p3", title: "Bunk Monitoring System UI", role: "UI Designer", category: "UI Design",
+  { id: "p_inamigos", title: "InAmigos Foundation — Project Udaan", role: "Content & Visual Designer", category: "Campaigns",
+    description: "Visual creatives, article layouts and social campaign design for InAmigos Foundation's Project Udaan — a women empowerment & youth-development initiative. Crafted infographics, posters and carousel stories for digital outreach.",
+    tools: ["Photoshop", "Figma", "Canva"],
+    gradient: "linear-gradient(135deg, #7C3AED, #06B6D4)", emoji: "✊", size: "lg",
+    image: workA.url, link: udaanPdf.url },
+  { id: "p_adidas1", title: "Adidas — Heritage x Performance", role: "Brand Visual Designer", category: "Branding",
+    description: "Concept campaign for Adidas blending heritage style with advanced performance technology. Hero key visual focused on bold sneaker storytelling, dynamic composition and brand-true type system.",
+    tools: ["Photoshop", "Illustrator"],
+    gradient: "linear-gradient(135deg, #0a0a0a, #5ba300)", emoji: "👟", size: "lg",
+    image: work1.url },
+  { id: "p_adidas2", title: "Adidas — Run Performance", role: "Graphic Designer", category: "Campaigns",
+    description: "Social and out-of-home creative for Adidas running line. Built around motion, grit and the 3-stripe identity — engineered for scroll-stop on social.",
+    tools: ["Photoshop"], gradient: "linear-gradient(135deg, #E11D48, #0a0a0a)", emoji: "🏃", size: "md",
+    image: work2.url },
+  { id: "p_adidas3", title: "Adidas — Court & Casual", role: "Graphic Designer", category: "Campaigns",
+    description: "Lifestyle product visual for Adidas casual & court range — sustainable materials messaging, premium product photography composite.",
+    tools: ["Photoshop", "Illustrator"], gradient: "linear-gradient(135deg, #2563EB, #0a0a0a)", emoji: "🎾", size: "md",
+    image: work3.url },
+  { id: "p_maaza", title: "Maaza — Mango Refresh", role: "Brand & Packaging Designer", category: "Branding",
+    description: "Bold beverage poster for Maaza — saturated mango palette, sticker-style typography and high-energy product staging built for retail and social.",
+    tools: ["Photoshop", "Illustrator"],
+    gradient: "linear-gradient(135deg, #F59E0B, #E11D48)", emoji: "🥭", size: "md",
+    image: workMaaza.url },
+  { id: "p_pulse", title: "Pulse — Candy Pop", role: "Brand Designer", category: "Branding",
+    description: "Pulse candy creative — playful product hero, kinetic type and high-contrast color blocking that owns the feed.",
+    tools: ["Photoshop"], gradient: "linear-gradient(135deg, #F472B6, #F59E0B)", emoji: "🍬", size: "sm",
+    image: workPulse.url },
+  { id: "p_bunk", title: "Bunk Monitoring System UI", role: "UI Designer", category: "UI Design",
     description: "Intuitive dashboard interfaces and UX flows for a computer-vision attendance platform built for institutions.",
-    tools: ["Figma"], gradient: "linear-gradient(135deg, #2563EB, #7C3AED)", emoji: "📊", size: "md" },
-  { id: "p4", title: "Editorial Poster Series", role: "Graphic Designer", category: "Posters",
-    description: "Bold typographic poster series exploring contemporary visual culture and editorial storytelling.",
-    tools: ["Photoshop", "Illustrator"], gradient: "linear-gradient(135deg, #E11D48, #7C3AED)", emoji: "🎨", size: "sm" },
-  { id: "p5", title: "Brand Identity — Café Studio", role: "Brand Designer", category: "Branding",
-    description: "Complete identity system: logo, color, type, packaging concepts and a social rollout playbook.",
-    tools: ["Figma", "Illustrator"], gradient: "linear-gradient(135deg, #F59E0B, #E11D48)", emoji: "☕", size: "md" },
-  { id: "p6", title: "Instagram Campaign Series", role: "Social Media Designer", category: "Social Media",
-    description: "Cohesive grid system + reel covers driving 3x engagement for a creator-led brand.",
-    tools: ["Canva", "CapCut", "Figma"], gradient: "linear-gradient(135deg, #10B981, #06B6D4)", emoji: "📱", size: "sm" },
-  { id: "p7", title: "Reel Covers & Story Highlights", role: "Content Designer", category: "Social Media",
-    description: "Scroll-stopping reel covers and modular story highlight icons crafted for @designedby.ld and client pages.",
-    tools: ["Photoshop", "Figma", "CapCut"], gradient: "linear-gradient(135deg, #F472B6, #89e900)", emoji: "🎬", size: "md" },
-  { id: "p8", title: "Typographic Quote Posts", role: "Graphic Designer", category: "Social Media",
+    tools: ["Figma"], gradient: "linear-gradient(135deg, #2563EB, #7C3AED)", emoji: "📊", size: "sm" },
+  { id: "p_carousel", title: "Carousel Storytelling", role: "Visual Storyteller", category: "Content Design",
+    description: "10-slide Instagram carousels turning complex ideas into bite-sized, swipeable narratives for @designedby.ld.",
+    tools: ["Figma", "Canva"], gradient: "linear-gradient(135deg, #89e900, #06B6D4)", emoji: "📖", size: "sm" },
+  { id: "p_type", title: "Typographic Quote Series", role: "Graphic Designer", category: "Social Media",
     description: "A weekly typographic series for Instagram — bold type, lime accents, consistent brand voice.",
     tools: ["Illustrator", "Figma"], gradient: "linear-gradient(135deg, #0a0a0a, #5ba300)", emoji: "✒️", size: "sm" },
-  { id: "p9", title: "Carousel Storytelling", role: "Visual Storyteller", category: "Content Design",
-    description: "10-slide Instagram carousels turning complex ideas into bite-sized, swipeable narratives.",
-    tools: ["Figma", "Canva"], gradient: "linear-gradient(135deg, #89e900, #06B6D4)", emoji: "📖", size: "sm" },
 ];
+
+
 
 const categories = ["All", "Branding", "Social Media", "Posters", "UI Design", "Content Design", "Campaigns"];
 
@@ -532,10 +580,17 @@ function Portfolio_() {
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setOpen(p)}
                   className={`group relative overflow-hidden rounded-3xl text-left ${span}`}>
-                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                    style={{ background: p.gradient }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
+                  {p.image ? (
+                    <img src={p.image} alt={p.title} loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  ) : (
+                    <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                      style={{ background: p.gradient }} />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  {!p.image && (
+                    <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
+                  )}
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
                     <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
@@ -563,9 +618,13 @@ function Portfolio_() {
               <button onClick={() => setOpen(null)} className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/40 backdrop-blur transition-colors hover:bg-black/60">
                 <X className="h-5 w-5" />
               </button>
-              <div className="relative h-72 overflow-hidden" style={{ background: open.gradient }}>
-                <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-8">
+              <div className="relative h-80 overflow-hidden" style={{ background: open.gradient }}>
+                {open.image ? (
+                  <img src={open.image} alt={open.title} className="absolute inset-0 h-full w-full object-cover" />
+                ) : (
+                  <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
+                )}
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-8">
                   <div className="mb-2 inline-block rounded-full bg-white/20 text-white px-3 py-1 text-xs">{open.category}</div>
                   <h3 className="font-display text-3xl font-bold text-white">{open.title}</h3>
                 </div>
@@ -584,6 +643,12 @@ function Portfolio_() {
                   </div>
                 </div>
                 <p className="mt-6 leading-relaxed text-muted-foreground">{open.description}</p>
+                {open.link && (
+                  <a href={open.link} target="_blank" rel="noreferrer"
+                    className="mt-6 inline-flex items-center gap-2 rounded-full gradient-primary px-5 py-2.5 text-sm font-medium text-white shadow-glow">
+                    View Case Study <ArrowUpRight className="h-4 w-4" />
+                  </a>
+                )}
               </div>
             </motion.div>
           </motion.div>
@@ -731,9 +796,10 @@ function Resume() {
               <h2 className="mt-5 font-display text-4xl font-bold md:text-5xl">Grab the full <span className="text-gradient">CV</span>.</h2>
               <p className="mt-4 text-muted-foreground">A concise one-page resume with experience, education, tools and project highlights — ready to share with your team.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <MagneticButton href="#contact" className="rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
+                <a href={resumePdf.url} download="Leeladhar_Designer.pdf" target="_blank" rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
                   <Download className="h-4 w-4" /> Download Resume
-                </MagneticButton>
+                </a>
                 <MagneticButton href="mailto:designedbyld25@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
                   <Mail className="h-4 w-4" /> Email Me
                 </MagneticButton>
@@ -1007,9 +1073,22 @@ function ScrollProgress() {
   return <motion.div style={{ width: w }} className="fixed left-0 top-0 z-[60] h-0.5 gradient-accent" />;
 }
 
+function GlobalShapes() {
+  return (
+    <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <div className="absolute -left-32 top-[10%] h-[28rem] w-[28rem] rounded-full bg-primary/25 blur-3xl animate-float-slow" />
+      <div className="absolute right-[-10%] top-[35%] h-[32rem] w-[32rem] rounded-full bg-accent/20 blur-3xl animate-float-slow" style={{ animationDelay: "2s" }} />
+      <div className="absolute left-[20%] top-[65%] h-[26rem] w-[26rem] rounded-full bg-primary/20 blur-3xl animate-float-slow" style={{ animationDelay: "4s" }} />
+      <div className="absolute right-[15%] bottom-[5%] h-[24rem] w-[24rem] rounded-full bg-accent/25 blur-3xl animate-float-slow" style={{ animationDelay: "1s" }} />
+      <div className="absolute left-[50%] top-[90%] h-72 w-72 -translate-x-1/2 rounded-full bg-primary/30 blur-3xl animate-float-slow" style={{ animationDelay: "3s" }} />
+    </div>
+  );
+}
+
 function Portfolio() {
   return (
     <main className="relative">
+      <GlobalShapes />
       <ScrollProgress />
       <Nav />
       <Hero />
@@ -1027,3 +1106,4 @@ function Portfolio() {
     </main>
   );
 }
+
