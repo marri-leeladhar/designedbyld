@@ -495,118 +495,237 @@ function Services() {
 
 /* ---------------- Portfolio ---------------- */
 
+type CategoryName =
+  | "Poster Design" | "Social Media Posts" | "Carousel Design" | "YT Thumbnails"
+  | "Logos" | "Packaging Designs" | "Digital Advertisements" | "AI Creatives";
+
 type Project = {
-  id: string; title: string; role: string; category: string; description: string;
+  id: string; title: string; role: string; categories: CategoryName[]; description: string;
   tools: string[]; gradient: string; emoji: string; size: "sm" | "md" | "lg";
   image?: string; link?: string;
 };
 
 const projects: Project[] = [
-  { id: "p_inamigos", title: "InAmigos Foundation — Project Udaan", role: "Content & Visual Designer", category: "Campaigns",
-    description: "Visual creatives, article layouts and social campaign design for InAmigos Foundation's Project Udaan — a women empowerment & youth-development initiative. Crafted infographics, posters and carousel stories for digital outreach.",
+  { id: "p_poster_adidas", title: "Adidas — Rule Your Race", role: "Poster Designer",
+    categories: ["Poster Design", "Digital Advertisements"],
+    description: "Hero poster for the Adidas Adizero Adios Pro Evo 3 — bold display type, motion-driven composition and editorial product staging.",
+    tools: ["Photoshop", "Illustrator"],
+    gradient: "linear-gradient(135deg,#0a0a0a,#5ba300)", emoji: "👟", size: "lg",
+    image: posterAdidas.url },
+  { id: "p_poster_dio", title: "Honda Dio 110 — Position Lamp", role: "Poster Designer",
+    categories: ["Poster Design", "Digital Advertisements"],
+    description: "Product spotlight poster for Honda Dio 110 — kinetic typography, hotspot callout and saturated red palette built for retail visibility.",
+    tools: ["Photoshop"], gradient: "linear-gradient(135deg,#E11D48,#F59E0B)", emoji: "🛵", size: "md",
+    image: posterDio.url },
+  { id: "p_poster_maaza", title: "Maaza — Lift Your Mood", role: "Poster Designer",
+    categories: ["Poster Design", "Packaging Designs", "AI Creatives"],
+    description: "AI-assisted concept poster for Maaza — surreal scale play, golden-hour mango palette and retail-ready brand staging.",
+    tools: ["Photoshop", "AI"], gradient: "linear-gradient(135deg,#F59E0B,#E11D48)", emoji: "🥭", size: "md",
+    image: posterMaaza.url },
+  { id: "p_inamigos", title: "InAmigos Foundation — Project Udaan", role: "Content & Visual Designer",
+    categories: ["Digital Advertisements", "Social Media Posts", "Carousel Design"],
+    description: "Visual creatives, article layouts and social campaign design for InAmigos Foundation's Project Udaan — a women empowerment & youth-development initiative.",
     tools: ["Photoshop", "Figma", "Canva"],
     gradient: "linear-gradient(135deg, #7C3AED, #06B6D4)", emoji: "✊", size: "lg",
     image: workA.url, link: udaanPdf.url },
-  { id: "p_adidas1", title: "Adidas — Heritage x Performance", role: "Brand Visual Designer", category: "Branding",
-    description: "Concept campaign for Adidas blending heritage style with advanced performance technology. Hero key visual focused on bold sneaker storytelling, dynamic composition and brand-true type system.",
+  { id: "p_adidas1", title: "Adidas — Heritage x Performance", role: "Brand Visual Designer",
+    categories: ["Poster Design", "Digital Advertisements"],
+    description: "Concept campaign for Adidas blending heritage style with performance technology. Bold sneaker storytelling with brand-true type system.",
     tools: ["Photoshop", "Illustrator"],
     gradient: "linear-gradient(135deg, #0a0a0a, #5ba300)", emoji: "👟", size: "lg",
     image: work1.url },
-  { id: "p_adidas2", title: "Adidas — Run Performance", role: "Graphic Designer", category: "Campaigns",
-    description: "Social and out-of-home creative for Adidas running line. Built around motion, grit and the 3-stripe identity — engineered for scroll-stop on social.",
+  { id: "p_adidas2", title: "Adidas — Run Performance", role: "Graphic Designer",
+    categories: ["Digital Advertisements", "Social Media Posts"],
+    description: "Social and out-of-home creative for Adidas running line — built around motion, grit and the 3-stripe identity.",
     tools: ["Photoshop"], gradient: "linear-gradient(135deg, #E11D48, #0a0a0a)", emoji: "🏃", size: "md",
     image: work2.url },
-  { id: "p_adidas3", title: "Adidas — Court & Casual", role: "Graphic Designer", category: "Campaigns",
-    description: "Lifestyle product visual for Adidas casual & court range — sustainable materials messaging, premium product photography composite.",
+  { id: "p_adidas3", title: "Adidas — Court & Casual", role: "Graphic Designer",
+    categories: ["Digital Advertisements", "Poster Design"],
+    description: "Lifestyle product visual for Adidas casual & court range — sustainable materials messaging, premium product composite.",
     tools: ["Photoshop", "Illustrator"], gradient: "linear-gradient(135deg, #2563EB, #0a0a0a)", emoji: "🎾", size: "md",
     image: work3.url },
-  { id: "p_maaza", title: "Maaza — Mango Refresh", role: "Brand & Packaging Designer", category: "Branding",
-    description: "Bold beverage poster for Maaza — saturated mango palette, sticker-style typography and high-energy product staging built for retail and social.",
+  { id: "p_maaza", title: "Maaza — Mango Refresh", role: "Brand & Packaging Designer",
+    categories: ["Packaging Designs", "Poster Design"],
+    description: "Bold beverage poster for Maaza — saturated mango palette, sticker-style typography and high-energy product staging.",
     tools: ["Photoshop", "Illustrator"],
     gradient: "linear-gradient(135deg, #F59E0B, #E11D48)", emoji: "🥭", size: "md",
     image: workMaaza.url },
-  { id: "p_pulse", title: "Pulse — Candy Pop", role: "Brand Designer", category: "Branding",
+  { id: "p_pulse", title: "Pulse — Candy Pop", role: "Brand Designer",
+    categories: ["Packaging Designs", "Social Media Posts"],
     description: "Pulse candy creative — playful product hero, kinetic type and high-contrast color blocking that owns the feed.",
     tools: ["Photoshop"], gradient: "linear-gradient(135deg, #F472B6, #F59E0B)", emoji: "🍬", size: "sm",
     image: workPulse.url },
-  { id: "p_bunk", title: "Bunk Monitoring System UI", role: "UI Designer", category: "UI Design",
-    description: "Intuitive dashboard interfaces and UX flows for a computer-vision attendance platform built for institutions.",
-    tools: ["Figma"], gradient: "linear-gradient(135deg, #2563EB, #7C3AED)", emoji: "📊", size: "sm" },
-  { id: "p_carousel", title: "Carousel Storytelling", role: "Visual Storyteller", category: "Content Design",
+  { id: "p_carousel", title: "Carousel Storytelling", role: "Visual Storyteller",
+    categories: ["Carousel Design", "Social Media Posts"],
     description: "10-slide Instagram carousels turning complex ideas into bite-sized, swipeable narratives for @designedby.ld.",
     tools: ["Figma", "Canva"], gradient: "linear-gradient(135deg, #89e900, #06B6D4)", emoji: "📖", size: "sm" },
-  { id: "p_type", title: "Typographic Quote Series", role: "Graphic Designer", category: "Social Media",
+  { id: "p_type", title: "Typographic Quote Series", role: "Graphic Designer",
+    categories: ["Social Media Posts"],
     description: "A weekly typographic series for Instagram — bold type, lime accents, consistent brand voice.",
     tools: ["Illustrator", "Figma"], gradient: "linear-gradient(135deg, #0a0a0a, #5ba300)", emoji: "✒️", size: "sm" },
+  { id: "p_yt_tech", title: "Tech Review Thumbnails", role: "Thumbnail Designer",
+    categories: ["YT Thumbnails"],
+    description: "High-CTR YouTube thumbnails for tech & lifestyle creators — bold faces, contrast type and scroll-stop framing.",
+    tools: ["Photoshop"], gradient: "linear-gradient(135deg,#E11D48,#7C3AED)", emoji: "▶️", size: "md" },
+  { id: "p_yt_vlog", title: "Vlog Series Thumbnails", role: "Thumbnail Designer",
+    categories: ["YT Thumbnails"],
+    description: "Cohesive thumbnail system for a long-form vlog channel — consistent typography lockup and color identity.",
+    tools: ["Photoshop", "Figma"], gradient: "linear-gradient(135deg,#06B6D4,#7C3AED)", emoji: "🎬", size: "sm" },
+  { id: "p_logo_ld", title: "designedby.ld Personal Mark", role: "Logo Designer",
+    categories: ["Logos"],
+    description: "Personal monogram and wordmark — geometric LD lockup with lime accent, scaled across socials and merch.",
+    tools: ["Illustrator"], gradient: "linear-gradient(135deg,#0a0a0a,#5ba300)", emoji: "✦", size: "md" },
+  { id: "p_logo_studio", title: "Studio & Startup Marks", role: "Logo Designer",
+    categories: ["Logos"],
+    description: "Identity exploration set — wordmarks, monograms and emblem systems for early-stage brands.",
+    tools: ["Illustrator", "Figma"], gradient: "linear-gradient(135deg,#7C3AED,#06B6D4)", emoji: "◎", size: "sm" },
+  { id: "p_ai_surreal", title: "Surreal Product Scenes", role: "AI Creative Director",
+    categories: ["AI Creatives", "Poster Design"],
+    description: "AI-assisted hero visuals — surreal scale, hyper-real lighting and brand-aligned product fantasy.",
+    tools: ["Midjourney", "Photoshop"], gradient: "linear-gradient(135deg,#F472B6,#7C3AED)", emoji: "🪄", size: "md" },
+  { id: "p_ai_portrait", title: "AI Brand Portraits", role: "AI Creative",
+    categories: ["AI Creatives", "Social Media Posts"],
+    description: "Stylized AI portrait series for brand storytelling — directed prompts, finished in Photoshop.",
+    tools: ["Midjourney", "Photoshop"], gradient: "linear-gradient(135deg,#06B6D4,#89e900)", emoji: "🧠", size: "sm" },
+  { id: "p_ad_banner", title: "Performance Ad Banners", role: "Ad Designer",
+    categories: ["Digital Advertisements", "Social Media Posts"],
+    description: "Conversion-focused ad creatives across Meta and Google — modular templates with strong CTAs.",
+    tools: ["Figma", "Photoshop"], gradient: "linear-gradient(135deg,#2563EB,#06B6D4)", emoji: "📣", size: "sm" },
+  { id: "p_carousel_edu", title: "Edu Carousels", role: "Visual Storyteller",
+    categories: ["Carousel Design"],
+    description: "Educational carousel sets — strong info hierarchy, bold pull-quotes and a swipe-through narrative arc.",
+    tools: ["Figma"], gradient: "linear-gradient(135deg,#5ba300,#06B6D4)", emoji: "📚", size: "sm" },
 ];
 
-
-
-const categories = ["All", "Branding", "Social Media", "Posters", "UI Design", "Content Design", "Campaigns"];
+type Category = { name: CategoryName; icon: typeof ImageIcon; gradient: string; cover: string };
+const CATEGORIES: Category[] = [
+  { name: "Poster Design", icon: ImageIcon, gradient: "linear-gradient(135deg,#0a0a0a,#5ba300)", cover: posterAdidas.url },
+  { name: "Social Media Posts", icon: Square, gradient: "linear-gradient(135deg,#E11D48,#7C3AED)", cover: work2.url },
+  { name: "Carousel Design", icon: Film, gradient: "linear-gradient(135deg,#7C3AED,#06B6D4)", cover: workA.url },
+  { name: "YT Thumbnails", icon: PlaySquare, gradient: "linear-gradient(135deg,#E11D48,#F59E0B)", cover: work3.url },
+  { name: "Logos", icon: Tag, gradient: "linear-gradient(135deg,#0a0a0a,#7C3AED)", cover: work1.url },
+  { name: "Packaging Designs", icon: Package, gradient: "linear-gradient(135deg,#F59E0B,#E11D48)", cover: workMaaza.url },
+  { name: "Digital Advertisements", icon: MegaphoneIcon, gradient: "linear-gradient(135deg,#2563EB,#06B6D4)", cover: posterDio.url },
+  { name: "AI Creatives", icon: Wand2, gradient: "linear-gradient(135deg,#F472B6,#7C3AED)", cover: posterMaaza.url },
+];
 
 function Portfolio_() {
-  const [active, setActive] = useState("All");
+  const [activeCat, setActiveCat] = useState<CategoryName | null>(null);
   const [open, setOpen] = useState<Project | null>(null);
-  const filtered = active === "All" ? projects : projects.filter(p => p.category === active);
+  const filtered = activeCat ? projects.filter(p => p.categories.includes(activeCat)) : [];
 
   return (
     <section id="work" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader eyebrow="Selected Work" title={<>Recent <span className="text-gradient">projects</span>.</>}
-          subtitle="A glimpse of brands, campaigns, and interfaces I've shaped." />
+        <SectionHeader eyebrow="Selected Work"
+          title={<>Browse by <span className="text-gradient">category</span>.</>}
+          subtitle="Pick a category to explore the work — posters, socials, carousels, thumbnails, logos, packaging, ads and AI creatives." />
 
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-2">
-          {categories.map(c => (
-            <button key={c} onClick={() => setActive(c)}
-              className={`rounded-full px-4 py-2 text-sm transition-all ${active === c ? "gradient-primary text-white shadow-glow" : "glass text-muted-foreground hover:text-foreground"}`}>
-              {c}
-            </button>
-          ))}
-        </div>
-
-        <div className="mb-10 flex justify-center">
-          <a href="https://www.instagram.com/designedby.ld" target="_blank" rel="noreferrer"
-            className="glass group inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-glow">
-            <Instagram className="h-4 w-4 text-accent" />
-            See more work live on <span className="text-gradient-primary font-semibold">@designedby.ld</span>
-            <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
-        </div>
-
-        <motion.div layout className="grid auto-rows-[200px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <AnimatePresence mode="popLayout">
-            {filtered.map((p, i) => {
-              const span = p.size === "lg" ? "md:col-span-2 row-span-2" : p.size === "md" ? "row-span-2" : "row-span-1";
-              return (
-                <motion.button layout key={p.id}
-                  initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
-                  transition={{ delay: i * 0.05 }}
-                  onClick={() => setOpen(p)}
-                  className={`group relative overflow-hidden rounded-3xl text-left ${span}`}>
-                  {p.image ? (
-                    <img src={p.image} alt={p.title} loading="lazy"
+        <AnimatePresence mode="wait">
+          {!activeCat ? (
+            <motion.div key="cats"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}
+              className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {CATEGORIES.map((c, i) => {
+                const count = projects.filter(p => p.categories.includes(c.name)).length;
+                const Icon = c.icon;
+                return (
+                  <motion.button key={c.name}
+                    initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    onClick={() => setActiveCat(c.name)}
+                    className="group relative aspect-[4/5] overflow-hidden rounded-3xl text-left shadow-card transition-all hover:-translate-y-1 hover:shadow-glow">
+                    <img src={c.cover} alt={c.name} loading="lazy"
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                  ) : (
-                    <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                      style={{ background: p.gradient }} />
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                  {!p.image && (
-                    <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
-                  )}
-                  <div className="absolute inset-x-0 bottom-0 p-6">
-                    <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
-                    <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
-                    <div className="mt-1 text-sm text-white/70">{p.role}</div>
-                  </div>
-                  <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/20 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
-                    <ArrowUpRight className="h-5 w-5 text-white" />
-                  </div>
-                </motion.button>
-              );
-            })}
-          </AnimatePresence>
-        </motion.div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10 transition-all duration-500 group-hover:from-black/95 group-hover:via-black/60" />
+                    <div className="absolute left-5 top-5 grid h-11 w-11 place-items-center rounded-2xl backdrop-blur"
+                      style={{ background: c.gradient }}>
+                      <Icon className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full bg-white/20 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                      <ArrowUpRight className="h-5 w-5 text-white" />
+                    </div>
+                    <div className="absolute inset-x-0 bottom-0 p-6">
+                      <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                        {count} {count === 1 ? "Project" : "Projects"}
+                      </div>
+                      <h3 className="font-display text-2xl font-bold text-white md:text-3xl">{c.name}</h3>
+                    </div>
+                  </motion.button>
+                );
+              })}
+            </motion.div>
+          ) : (
+            <motion.div key="grid"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.4 }}>
+              <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
+                <button onClick={() => setActiveCat(null)}
+                  className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-glow">
+                  <ArrowLeft className="h-4 w-4" /> Back to Categories
+                </button>
+                <div className="flex items-center gap-3">
+                  <h3 className="font-display text-2xl font-bold md:text-3xl">{activeCat}</h3>
+                  <span className="rounded-full bg-black/5 px-3 py-1 text-xs text-muted-foreground">
+                    {filtered.length} {filtered.length === 1 ? "project" : "projects"}
+                  </span>
+                </div>
+              </div>
+
+              <div className="mb-10 flex justify-center">
+                <a href="https://www.instagram.com/designedby.ld" target="_blank" rel="noreferrer"
+                  className="glass group inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-glow">
+                  <Instagram className="h-4 w-4 text-accent" />
+                  See more on <span className="text-gradient-primary font-semibold">@designedby.ld</span>
+                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                </a>
+              </div>
+
+              <motion.div layout className="grid auto-rows-[200px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                <AnimatePresence mode="popLayout">
+                  {filtered.map((p, i) => {
+                    const span = p.size === "lg" ? "md:col-span-2 row-span-2" : p.size === "md" ? "row-span-2" : "row-span-1";
+                    return (
+                      <motion.button layout key={p.id}
+                        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
+                        transition={{ delay: i * 0.05 }}
+                        onClick={() => setOpen(p)}
+                        className={`group relative overflow-hidden rounded-3xl text-left ${span}`}>
+                        {p.image ? (
+                          <img src={p.image} alt={p.title} loading="lazy"
+                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                        ) : (
+                          <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                            style={{ background: p.gradient }} />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                        {!p.image && (
+                          <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
+                        )}
+                        <div className="absolute inset-x-0 bottom-0 p-6">
+                          <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.categories[0]}</div>
+                          <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
+                          <div className="mt-1 text-sm text-white/70">{p.role}</div>
+                        </div>
+                        <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/20 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
+                          <ArrowUpRight className="h-5 w-5 text-white" />
+                        </div>
+                      </motion.button>
+                    );
+                  })}
+                </AnimatePresence>
+              </motion.div>
+
+              {filtered.length === 0 && (
+                <div className="py-20 text-center text-muted-foreground">
+                  More work coming soon in this category. Follow{" "}
+                  <a className="text-gradient-primary font-semibold" href="https://www.instagram.com/designedby.ld" target="_blank" rel="noreferrer">@designedby.ld</a>.
+                </div>
+              )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
 
       {/* Lightbox */}
@@ -628,7 +747,11 @@ function Portfolio_() {
                   <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
                 )}
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-8">
-                  <div className="mb-2 inline-block rounded-full bg-white/20 text-white px-3 py-1 text-xs">{open.category}</div>
+                  <div className="mb-2 flex flex-wrap gap-1.5">
+                    {open.categories.map(c => (
+                      <span key={c} className="inline-block rounded-full bg-white/20 text-white px-3 py-1 text-xs backdrop-blur">{c}</span>
+                    ))}
+                  </div>
                   <h3 className="font-display text-3xl font-bold text-white">{open.title}</h3>
                 </div>
               </div>
@@ -660,6 +783,7 @@ function Portfolio_() {
     </section>
   );
 }
+
 
 /* ---------------- Experience ---------------- */
 
