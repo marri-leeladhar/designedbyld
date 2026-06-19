@@ -221,62 +221,85 @@ function Hero() {
         </div>
       </motion.div>
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pb-24 pt-12 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
-          className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
-          </span>
-          Available for freelance & full-time
-        </motion.div>
+      <div className="relative z-10 mx-auto grid max-w-7xl items-center gap-12 px-6 pb-24 pt-12 lg:grid-cols-2 lg:gap-8">
+        <div className="flex flex-col items-center text-center lg:items-start lg:text-left">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
+            className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
+            </span>
+            Available for freelance & full-time
+          </motion.div>
 
-        <h1 className="mt-8 max-w-5xl text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-7xl lg:text-[5.5rem]">
-          {"Designing Brands".split(" ").map((w, i) => (
-            <motion.span key={i} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + i * 0.08 }} className="mr-4 inline-block">{w}</motion.span>
-          ))}
-          <br />
-          <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
-            className="inline-block">That People </motion.span>
-          <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
-            className="inline-block text-gradient">Remember</motion.span>
-        </h1>
-
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
-          className="mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl">
-          Graphic Designer · Visual Storyteller · Content Creator — crafting visual experiences that connect, inspire, and convert.
-        </motion.p>
-
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}
-          className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <MagneticButton href="#work" className="rounded-full gradient-primary px-7 py-3.5 text-sm font-medium text-white shadow-glow">
-            View Projects <ArrowRight className="h-4 w-4" />
-          </MagneticButton>
-          <MagneticButton href="#resume" className="glass rounded-full px-7 py-3.5 text-sm font-medium text-foreground">
-            <Download className="h-4 w-4" /> Download Resume
-          </MagneticButton>
-          <MagneticButton href="#contact" className="rounded-full border border-accent/40 bg-accent/10 px-7 py-3.5 text-sm font-medium text-accent">
-            Hire Me <Sparkles className="h-4 w-4" />
-          </MagneticButton>
-        </motion.div>
-
-        {/* marquee tools */}
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
-          className="mt-20 w-full">
-          <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">Tools of the craft</p>
-          <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-muted-foreground">
-            {["Figma", "Photoshop", "Illustrator", "Canva", "CapCut", "React", "Framer", "AI Tools"].map((t, i) => (
-              <motion.span key={t} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 + i * 0.05 }}
-                className="font-display text-lg font-medium tracking-tight transition-colors hover:text-foreground">{t}</motion.span>
+          <h1 className="mt-8 max-w-2xl text-balance text-5xl font-bold leading-[1.05] tracking-tight md:text-6xl lg:text-[4.5rem]">
+            {"Designing Brands".split(" ").map((w, i) => (
+              <motion.span key={i} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 + i * 0.08 }} className="mr-4 inline-block">{w}</motion.span>
             ))}
+            <br />
+            <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }}
+              className="inline-block">That People </motion.span>
+            <motion.span initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
+              className="inline-block text-gradient">Remember</motion.span>
+          </h1>
+
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}
+            className="mt-8 max-w-xl text-lg text-muted-foreground md:text-xl">
+            Graphic Designer · Visual Storyteller · Content Creator — crafting visual experiences that connect, inspire, and convert.
+          </motion.p>
+
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.75 }}
+            className="mt-10 flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+            <MagneticButton href="#work" className="rounded-full gradient-primary px-7 py-3.5 text-sm font-medium text-white shadow-glow">
+              View Projects <ArrowRight className="h-4 w-4" />
+            </MagneticButton>
+            <a href={resumePdf.url} download="Leeladhar_Designer.pdf" target="_blank" rel="noreferrer"
+              className="glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-foreground">
+              <Download className="h-4 w-4" /> Download Resume
+            </a>
+            <MagneticButton href="#contact" className="rounded-full border border-accent/40 bg-accent/10 px-7 py-3.5 text-sm font-medium text-accent">
+              Hire Me <Sparkles className="h-4 w-4" />
+            </MagneticButton>
+          </motion.div>
+        </div>
+
+        {/* Portrait */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          style={{ x: px, y: py }}
+          className="relative mx-auto w-full max-w-xl">
+          <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-primary/30 blur-3xl" />
+          <div className="absolute -inset-2 -z-10 rounded-[2rem] gradient-primary opacity-40 blur-2xl" />
+          <div className="glass relative overflow-hidden rounded-[2rem] p-1.5 shadow-glow">
+            <img src={ldPortrait.url} alt="designedby.ld portrait" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
           </div>
+          <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
+            className="glass absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl p-4 shadow-glow sm:flex">
+            <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary">
+              <Sparkles className="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <div className="text-xs uppercase tracking-wider text-muted-foreground">Now</div>
+              <div className="text-sm font-semibold">Open to work</div>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
-    </section>
-  );
-}
+
+      {/* marquee tools */}
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
+        className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-16 text-center">
+        <p className="mb-5 text-xs uppercase tracking-[0.3em] text-muted-foreground">Tools of the craft</p>
+        <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-muted-foreground">
+          {["Figma", "Photoshop", "Illustrator", "Canva", "CapCut", "React", "Framer", "AI Tools"].map((t, i) => (
+            <motion.span key={t} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1 + i * 0.05 }}
+              className="font-display text-lg font-medium tracking-tight transition-colors hover:text-foreground">{t}</motion.span>
+          ))}
+        </div>
+      </motion.div>
 
 /* ---------------- About ---------------- */
 
