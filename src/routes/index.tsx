@@ -300,6 +300,11 @@ function Hero() {
           ))}
         </div>
       </motion.div>
+    </section>
+  );
+}
+
+
 
 /* ---------------- About ---------------- */
 
