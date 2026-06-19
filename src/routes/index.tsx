@@ -580,10 +580,17 @@ function Portfolio_() {
                   transition={{ delay: i * 0.05 }}
                   onClick={() => setOpen(p)}
                   className={`group relative overflow-hidden rounded-3xl text-left ${span}`}>
-                  <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                    style={{ background: p.gradient }} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
+                  {p.image ? (
+                    <img src={p.image} alt={p.title} loading="lazy"
+                      className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  ) : (
+                    <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                      style={{ background: p.gradient }} />
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                  {!p.image && (
+                    <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
+                  )}
                   <div className="absolute inset-x-0 bottom-0 p-6">
                     <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.category}</div>
                     <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
