@@ -25,9 +25,9 @@ import posterMaaza from "@/assets/poster-maaza.png.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "designedby.ld — Graphic Designer & Visual Storyteller" },
-      { name: "description", content: "Premium portfolio of designedby.ld — Graphic Designer in India. Brand identity, social media design, and creative technology." },
-      { property: "og:title", content: "designedby.ld — Graphic Designer" },
+      { title: "DesignedByLD — Graphic Designer & Visual Storyteller" },
+      { name: "description", content: "Premium portfolio of DesignedByLD — Graphic Designer in India. Brand identity, social media design, and creative technology." },
+      { property: "og:title", content: "DesignedByLD — Graphic Designer" },
       { property: "og:description", content: "Designing brands that people remember." },
     ],
   }),
@@ -142,9 +142,9 @@ function Nav() {
       <div className={`mx-auto flex max-w-7xl items-center justify-between px-6 transition-all ${scrolled ? "" : ""}`}>
         <a href="#top" className="flex items-center gap-2">
           <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black shadow-glow ring-1 ring-accent/40">
-            <img src={ldLogo.url} alt="designedby.ld logo" className="h-full w-full object-cover" />
+            <img src={ldLogo.url} alt="DesignedByLD logo" className="h-full w-full object-cover" />
           </div>
-          <span className="hidden font-display text-sm font-semibold tracking-tight sm:block">designedby.ld</span>
+          <span className="hidden font-display text-sm font-semibold tracking-tight sm:block">DesignedByLD</span>
         </a>
         <nav className="glass hidden items-center gap-1 rounded-full px-2 py-2 md:flex">
           {links.map(([l, h]) => (
@@ -257,9 +257,9 @@ function Hero() {
             <MagneticButton href="#work" className="rounded-full gradient-primary px-7 py-3.5 text-sm font-medium text-white shadow-glow">
               View Projects <ArrowRight className="h-4 w-4" />
             </MagneticButton>
-            <a href={resumePdf.url} download="Leeladhar_Designer.pdf" target="_blank" rel="noreferrer"
+            <a href={resumePdf.url} target="_blank" rel="noreferrer"
               className="glass inline-flex items-center gap-2 rounded-full px-7 py-3.5 text-sm font-medium text-foreground">
-              <Download className="h-4 w-4" /> Download Resume
+              <Download className="h-4 w-4" /> View Resume
             </a>
             <MagneticButton href="#contact" className="rounded-full border border-accent/40 bg-accent/10 px-7 py-3.5 text-sm font-medium text-accent">
               Hire Me <Sparkles className="h-4 w-4" />
@@ -276,7 +276,7 @@ function Hero() {
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-primary/30 blur-3xl" />
           <div className="absolute -inset-2 -z-10 rounded-[2rem] gradient-primary opacity-40 blur-2xl" />
           <div className="glass relative overflow-hidden rounded-[2rem] p-1.5 shadow-glow">
-            <img src={ldPortrait.url} alt="designedby.ld portrait" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
+            <img src={ldPortrait.url} alt="DesignedByLD portrait" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
           </div>
           <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
             className="glass absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl p-4 shadow-glow sm:flex">
@@ -324,11 +324,11 @@ function About() {
             className="lg:col-span-5">
             <div className="glass relative overflow-hidden rounded-3xl p-1">
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[1.4rem]">
-                <img src={ldHero.url} alt="designedby.ld at work" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                <img src={ldHero.url} alt="DesignedByLD at work" className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 flex items-end justify-between p-6 text-white">
                   <div>
-                    <div className="font-display text-3xl font-bold leading-none">designedby.ld</div>
+                    <div className="font-display text-3xl font-bold leading-none">DesignedByLD</div>
                     <div className="mt-1 text-sm text-accent">Designer · Storyteller</div>
                   </div>
                   <Sparkles className="h-5 w-5 text-accent" />
@@ -353,10 +353,10 @@ function About() {
           <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             className="lg:col-span-7">
             <p className="text-xl leading-relaxed text-foreground/90">
-              I'm <span className="font-semibold text-gradient">designedby.ld</span> — a graphic designer and visual storyteller blending <span className="text-foreground">creative design</span>, <span className="text-foreground">technology</span>, and <span className="text-foreground">content creation</span> to build brands people actually remember.
+              Hi, I'm <span className="font-semibold text-gradient">Leeladhar</span>, the designer behind <span className="font-semibold text-foreground">DesignedByLD</span>. I specialize in creating high-impact social media posts, brand visuals, and presentation designs that grab attention and drive results. With <span className="text-foreground">2+ years of experience</span> and <span className="text-foreground">50+ projects delivered</span> across branding, campaigns, and digital design, I've helped brands and causes turn simple ideas into powerful visual stories that boost engagement and visibility.
             </p>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-              I craft brand identities, social media systems, marketing creatives, presentations and UI — turning ideas into visuals that move metrics and emotions. With a foundation in React, Python, and modern AI tools, I move fast from concept to a polished, production-ready outcome.
+              From scroll-stopping posters and carousels to clean brand identities and pitch decks, I focus on creating content that doesn't just look good — it performs.
             </p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
@@ -654,7 +654,6 @@ function Portfolio_() {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {CATEGORIES.map((c, i) => {
-                const count = projects.filter(p => p.categories.includes(c.name)).length;
                 const Icon = c.icon;
                 return (
                   <motion.button key={c.name}
@@ -673,9 +672,6 @@ function Portfolio_() {
                       <ArrowUpRight className="h-5 w-5 text-white" />
                     </div>
                     <div className="absolute inset-x-0 bottom-0 p-6">
-                      <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">
-                        {count} {count === 1 ? "Project" : "Projects"}
-                      </div>
                       <h3 className="font-display text-2xl font-bold text-white md:text-3xl">{c.name}</h3>
                     </div>
                   </motion.button>
@@ -889,9 +885,9 @@ function Resume() {
               <h2 className="mt-5 font-display text-4xl font-bold md:text-5xl">Grab the full <span className="text-gradient">CV</span>.</h2>
               <p className="mt-4 text-muted-foreground">A concise one-page resume with experience, education, tools and project highlights — ready to share with your team.</p>
               <div className="mt-7 flex flex-wrap gap-3">
-                <a href={resumePdf.url} download="Leeladhar_Designer.pdf" target="_blank" rel="noreferrer"
+                <a href={resumePdf.url} target="_blank" rel="noreferrer"
                   className="inline-flex items-center gap-2 rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
-                  <Download className="h-4 w-4" /> Download Resume
+                  <Download className="h-4 w-4" /> View Resume
                 </a>
                 <MagneticButton href="mailto:designedbyld25@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
                   <Mail className="h-4 w-4" /> Email Me
@@ -905,7 +901,7 @@ function Resume() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Resume</div>
-                    <div className="mt-1 font-display text-xl font-bold">designedby.ld</div>
+                    <div className="mt-1 font-display text-xl font-bold">DesignedByLD</div>
                   </div>
                   <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary"><span className="text-sm font-bold text-white">PDF</span></div>
                 </div>
@@ -1066,9 +1062,9 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
               <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black ring-1 ring-accent/40 shadow-glow">
-                <img src={ldLogo.url} alt="designedby.ld" className="h-full w-full object-cover" />
+                <img src={ldLogo.url} alt="DesignedByLD" className="h-full w-full object-cover" />
               </div>
-              <span className="font-display text-lg font-semibold">designedby.ld</span>
+              <span className="font-display text-lg font-semibold">DesignedByLD</span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Graphic Designer & Visual Storyteller crafting brands, campaigns and interfaces from India.
@@ -1100,7 +1096,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-black/10 pt-6 text-xs text-muted-foreground md:flex-row">
-          <div>© {new Date().getFullYear()} designedby.ld. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} DesignedByLD. All rights reserved.</div>
           <div className="flex items-center gap-1.5">Designed & coded with <Zap className="h-3.5 w-3.5 text-accent" /> in India</div>
         </div>
       </div>
