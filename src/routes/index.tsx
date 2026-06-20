@@ -901,7 +901,7 @@ function Resume() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-xs uppercase tracking-wider text-muted-foreground">Resume</div>
-                    <div className="mt-1 font-display text-xl font-bold">designedby.ld</div>
+                    <div className="mt-1 font-display text-xl font-bold">DesignedByLD</div>
                   </div>
                   <div className="grid h-10 w-10 place-items-center rounded-xl gradient-primary"><span className="text-sm font-bold text-white">PDF</span></div>
                 </div>
@@ -1062,9 +1062,9 @@ function Footer() {
           <div className="md:col-span-2">
             <div className="flex items-center gap-2">
               <div className="grid h-10 w-10 place-items-center overflow-hidden rounded-xl bg-black ring-1 ring-accent/40 shadow-glow">
-                <img src={ldLogo.url} alt="designedby.ld" className="h-full w-full object-cover" />
+                <img src={ldLogo.url} alt="DesignedByLD" className="h-full w-full object-cover" />
               </div>
-              <span className="font-display text-lg font-semibold">designedby.ld</span>
+              <span className="font-display text-lg font-semibold">DesignedByLD</span>
             </div>
             <p className="mt-4 max-w-md text-sm text-muted-foreground">
               Graphic Designer & Visual Storyteller crafting brands, campaigns and interfaces from India.
@@ -1096,7 +1096,7 @@ function Footer() {
           </div>
         </div>
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-black/10 pt-6 text-xs text-muted-foreground md:flex-row">
-          <div>© {new Date().getFullYear()} designedby.ld. All rights reserved.</div>
+          <div>© {new Date().getFullYear()} DesignedByLD. All rights reserved.</div>
           <div className="flex items-center gap-1.5">Designed & coded with <Zap className="h-3.5 w-3.5 text-accent" /> in India</div>
         </div>
       </div>
