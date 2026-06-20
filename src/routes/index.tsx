@@ -611,15 +611,41 @@ const CATEGORIES: Category[] = [
 
 function Portfolio_() {
   const [activeCat, setActiveCat] = useState<CategoryName | null>(null);
-  const [open, setOpen] = useState<Project | null>(null);
-  const filtered = activeCat ? projects.filter(p => p.categories.includes(activeCat)) : [];
+  const [lightboxIdx, setLightboxIdx] = useState<number | null>(null);
+
+  const galleryImages = activeCat
+    ? projects
+        .filter(p => p.categories.includes(activeCat) && p.image)
+        .map(p => p.image as string)
+    : [];
+
+  const openLightbox = (i: number) => setLightboxIdx(i);
+  const closeLightbox = () => setLightboxIdx(null);
+  const prev = () => setLightboxIdx(i => (i === null ? null : (i - 1 + galleryImages.length) % galleryImages.length));
+  const next = () => setLightboxIdx(i => (i === null ? null : (i + 1) % galleryImages.length));
+
+  useEffect(() => {
+    if (lightboxIdx === null) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") prev();
+      if (e.key === "ArrowRight") next();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lightboxIdx, galleryImages.length]);
+
+  const handleBack = () => { setLightboxIdx(null); setActiveCat(null); };
 
   return (
     <section id="work" className="relative px-6 py-32">
       <div className="mx-auto max-w-7xl">
-        <SectionHeader eyebrow="Selected Work"
-          title={<>Browse by <span className="text-gradient">category</span>.</>}
-          subtitle="Pick a category to explore the work — posters, socials, carousels, thumbnails, logos, packaging, ads and AI creatives." />
+        {!activeCat && (
+          <SectionHeader eyebrow="Selected Work"
+            title={<>Browse by <span className="text-gradient">category</span>.</>}
+            subtitle="Pick a category to explore the work — posters, socials, carousels, thumbnails, logos, packaging, ads and AI creatives." />
+        )}
 
         <AnimatePresence mode="wait">
           {!activeCat ? (
@@ -657,70 +683,32 @@ function Portfolio_() {
               })}
             </motion.div>
           ) : (
-            <motion.div key="grid"
+            <motion.div key="gallery"
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4 }}>
-              <div className="mb-8 flex flex-wrap items-center justify-between gap-4">
-                <button onClick={() => setActiveCat(null)}
+              <div className="mb-8 flex justify-start">
+                <button onClick={handleBack}
                   className="glass inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-glow">
                   <ArrowLeft className="h-4 w-4" /> Back to Categories
                 </button>
-                <div className="flex items-center gap-3">
-                  <h3 className="font-display text-2xl font-bold md:text-3xl">{activeCat}</h3>
-                  <span className="rounded-full bg-black/5 px-3 py-1 text-xs text-muted-foreground">
-                    {filtered.length} {filtered.length === 1 ? "project" : "projects"}
-                  </span>
+              </div>
+
+              {galleryImages.length > 0 ? (
+                <div className="columns-1 gap-5 sm:columns-2 lg:columns-3 [column-fill:_balance]">
+                  {galleryImages.map((src, i) => (
+                    <motion.button key={src + i}
+                      initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: i * 0.04 }}
+                      onClick={() => openLightbox(i)}
+                      className="group relative mb-5 block w-full overflow-hidden rounded-2xl break-inside-avoid">
+                      <img src={src} alt="" loading="lazy"
+                        className="block w-full transition-transform duration-700 group-hover:scale-[1.04]" />
+                    </motion.button>
+                  ))}
                 </div>
-              </div>
-
-              <div className="mb-10 flex justify-center">
-                <a href="https://www.instagram.com/designedby.ld" target="_blank" rel="noreferrer"
-                  className="glass group inline-flex items-center gap-3 rounded-full px-6 py-3 text-sm font-medium transition-all hover:-translate-y-0.5 hover:shadow-glow">
-                  <Instagram className="h-4 w-4 text-accent" />
-                  See more on <span className="text-gradient-primary font-semibold">@designedby.ld</span>
-                  <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </a>
-              </div>
-
-              <motion.div layout className="grid auto-rows-[200px] grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                <AnimatePresence mode="popLayout">
-                  {filtered.map((p, i) => {
-                    const span = p.size === "lg" ? "md:col-span-2 row-span-2" : p.size === "md" ? "row-span-2" : "row-span-1";
-                    return (
-                      <motion.button layout key={p.id}
-                        initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }}
-                        transition={{ delay: i * 0.05 }}
-                        onClick={() => setOpen(p)}
-                        className={`group relative overflow-hidden rounded-3xl text-left ${span}`}>
-                        {p.image ? (
-                          <img src={p.image} alt={p.title} loading="lazy"
-                            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110" />
-                        ) : (
-                          <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                            style={{ background: p.gradient }} />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
-                        {!p.image && (
-                          <div className="absolute right-6 top-6 text-6xl opacity-50 transition-all duration-500 group-hover:scale-125 group-hover:opacity-80">{p.emoji}</div>
-                        )}
-                        <div className="absolute inset-x-0 bottom-0 p-6">
-                          <div className="mb-2 inline-block rounded-full bg-white/20 px-3 py-1 text-xs font-medium text-white backdrop-blur">{p.categories[0]}</div>
-                          <h3 className="font-display text-xl font-bold text-white md:text-2xl">{p.title}</h3>
-                          <div className="mt-1 text-sm text-white/70">{p.role}</div>
-                        </div>
-                        <div className="absolute right-5 top-5 grid h-10 w-10 place-items-center rounded-full bg-white/20 opacity-0 backdrop-blur transition-all duration-300 group-hover:opacity-100">
-                          <ArrowUpRight className="h-5 w-5 text-white" />
-                        </div>
-                      </motion.button>
-                    );
-                  })}
-                </AnimatePresence>
-              </motion.div>
-
-              {filtered.length === 0 && (
+              ) : (
                 <div className="py-20 text-center text-muted-foreground">
-                  More work coming soon in this category. Follow{" "}
-                  <a className="text-gradient-primary font-semibold" href="https://www.instagram.com/designedby.ld" target="_blank" rel="noreferrer">@designedby.ld</a>.
+                  More work coming soon in this category.
                 </div>
               )}
             </motion.div>
@@ -730,53 +718,31 @@ function Portfolio_() {
 
       {/* Lightbox */}
       <AnimatePresence>
-        {open && (
+        {lightboxIdx !== null && galleryImages[lightboxIdx] && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
-            onClick={() => setOpen(null)}
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-background/80 p-4 backdrop-blur-xl">
-            <motion.div initial={{ scale: 0.95, y: 20 }} animate={{ scale: 1, y: 0 }} exit={{ scale: 0.95, y: 20 }}
+            onClick={closeLightbox}
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-xl">
+            <button onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+              className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20">
+              <X className="h-5 w-5" />
+            </button>
+            <button onClick={(e) => { e.stopPropagation(); prev(); }}
+              className="absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110">
+              <ArrowLeft className="h-5 w-5" />
+            </button>
+            <button onClick={(e) => { e.stopPropagation(); next(); }}
+              className="absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110">
+              <ArrowRight className="h-5 w-5" />
+            </button>
+            <motion.img key={lightboxIdx}
+              initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              className="glass relative max-h-[90vh] w-full max-w-3xl overflow-hidden rounded-3xl">
-              <button onClick={() => setOpen(null)} className="absolute right-4 top-4 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/40 backdrop-blur transition-colors hover:bg-black/60">
-                <X className="h-5 w-5" />
-              </button>
-              <div className="relative h-80 overflow-hidden" style={{ background: open.gradient }}>
-                {open.image ? (
-                  <img src={open.image} alt={open.title} className="absolute inset-0 h-full w-full object-cover" />
-                ) : (
-                  <div className="absolute right-8 top-8 text-8xl">{open.emoji}</div>
-                )}
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent p-8">
-                  <div className="mb-2 flex flex-wrap gap-1.5">
-                    {open.categories.map(c => (
-                      <span key={c} className="inline-block rounded-full bg-white/20 text-white px-3 py-1 text-xs backdrop-blur">{c}</span>
-                    ))}
-                  </div>
-                  <h3 className="font-display text-3xl font-bold text-white">{open.title}</h3>
-                </div>
-              </div>
-              <div className="p-8">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">Role</div>
-                    <div className="mt-1 font-semibold">{open.role}</div>
-                  </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-wider text-muted-foreground">Tools</div>
-                    <div className="mt-1 flex flex-wrap gap-1.5">
-                      {open.tools.map(tt => <span key={tt} className="rounded-full bg-black/5 text-foreground px-2 py-0.5 text-xs">{tt}</span>)}
-                    </div>
-                  </div>
-                </div>
-                <p className="mt-6 leading-relaxed text-muted-foreground">{open.description}</p>
-                {open.link && (
-                  <a href={open.link} target="_blank" rel="noreferrer"
-                    className="mt-6 inline-flex items-center gap-2 rounded-full gradient-primary px-5 py-2.5 text-sm font-medium text-white shadow-glow">
-                    View Case Study <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                )}
-              </div>
-            </motion.div>
+              src={galleryImages[lightboxIdx]} alt=""
+              className="max-h-[90vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl" />
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur">
+              {lightboxIdx + 1} / {galleryImages.length}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
