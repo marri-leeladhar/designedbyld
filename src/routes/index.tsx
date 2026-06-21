@@ -703,8 +703,9 @@ function Portfolio_() {
                       initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.04 }}
                       onClick={() => openLightbox(i)}
-                      className="group relative mb-5 block w-full overflow-hidden rounded-2xl break-inside-avoid">
-                      <img src={src} alt="" loading="lazy"
+                      aria-label={`Open ${activeCat} image ${i + 1} in lightbox`}
+                      className="group relative mb-5 block w-full overflow-hidden rounded-2xl break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                      <img src={src} alt={`${activeCat} design by DesignedByLD — ${i + 1}`} loading="lazy" decoding="async"
                         className="block w-full transition-transform duration-700 group-hover:scale-[1.04]" />
                     </motion.button>
                   ))}
