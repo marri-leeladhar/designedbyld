@@ -26,9 +26,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "DesignedByLD — Graphic Designer & Visual Storyteller" },
-      { name: "description", content: "Premium portfolio of DesignedByLD — Graphic Designer in India. Brand identity, social media design, and creative technology." },
+      { name: "description", content: "Premium portfolio of DesignedByLD — Graphic Designer in India. Brand identity, social media design, posters, packaging, and creative technology." },
       { property: "og:title", content: "DesignedByLD — Graphic Designer" },
       { property: "og:description", content: "Designing brands that people remember." },
+      { property: "og:url", content: "https://designedbyld.lovable.app/" },
+      { property: "og:image", content: `https://designedbyld.lovable.app${ldHero.url}` },
+      { name: "twitter:image", content: `https://designedbyld.lovable.app${ldHero.url}` },
+    ],
+    links: [
+      { rel: "canonical", href: "https://designedbyld.lovable.app/" },
+      { rel: "preload", as: "image", href: ldPortrait.url, fetchpriority: "high" } as unknown as { rel: string; href: string },
     ],
   }),
   component: Portfolio,
