@@ -842,47 +842,6 @@ function Achievements() {
   );
 }
 
-/* ---------------- Testimonials ---------------- */
-
-const testimonials = [
-  { n: "Priya Sharma", co: "Marketing Lead, InAmigos Foundation", r: "designedby.ld's visual storytelling brought our campaigns to life. The engagement jumped overnight.", a: "PS", g: "linear-gradient(135deg,#7C3AED,#06B6D4)" },
-  { n: "Rohit Verma", co: "Founder, Brewline Coffee", r: "He understood the brand instantly. The identity system he built feels like it's been there forever.", a: "RV", g: "linear-gradient(135deg,#06B6D4,#2563EB)" },
-  { n: "Ananya Reddy", co: "Product Manager, EduTech", r: "Pixel-perfect UI work with sharp UX thinking. Easily one of the best designers I've collaborated with.", a: "AR", g: "linear-gradient(135deg,#F59E0B,#E11D48)" },
-  { n: "Karthik Iyer", co: "Creative Director, Studio Nine", r: "Rare combo — design taste, technical depth, and content sense. designedby.ld ships at agency quality.", a: "KI", g: "linear-gradient(135deg,#10B981,#06B6D4)" },
-];
-
-function Testimonials() {
-  return (
-    <section className="relative px-6 py-32">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeader eyebrow="Testimonials" title={<>Kind words from <span className="text-gradient">collaborators</span>.</>} />
-        <div className="grid gap-5 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <motion.div key={t.n}
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="glass relative overflow-hidden rounded-3xl p-8">
-              <Quote className="absolute right-6 top-6 h-10 w-10 text-primary/30" />
-              <div className="flex gap-1 text-accent">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
-              </div>
-              <p className="mt-4 text-lg leading-relaxed text-foreground/90">"{t.r}"</p>
-              <div className="mt-6 flex items-center gap-4">
-                <div className="grid h-12 w-12 place-items-center rounded-full font-bold text-white" style={{ background: t.g }}>{t.a}</div>
-                <div>
-                  <div className="font-semibold">{t.n}</div>
-                  <div className="text-sm text-muted-foreground">{t.co}</div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Resume + Socials ---------------- */
 
 function Resume() {
