@@ -860,9 +860,12 @@ function Resume() {
                   className="inline-flex items-center gap-2 rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
                   <Download className="h-4 w-4" /> View Resume
                 </a>
-                <MagneticButton href="mailto:designedbyld25@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
+                <a
+                  href="mailto:designedbyld25@gmail.com?subject=Project%20Inquiry&body=Hi%20Leeladhar%2C%0A%0AI%27d%20like%20to%20discuss%20a%20project%20with%20you."
+                  className="glass inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition hover:bg-white/10"
+                >
                   <Mail className="h-4 w-4" /> Email Me
-                </MagneticButton>
+                </a>
               </div>
             </div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
