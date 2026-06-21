@@ -808,10 +808,10 @@ function Experience() {
 /* ---------------- Achievements ---------------- */
 
 const stats = [
-  { v: 50, suf: "+", l: "Design Projects", icon: Layers },
-  { v: 20, suf: "+", l: "Brand Creatives", icon: Palette },
-  { v: 100, suf: "+", l: "Social Posts", icon: Instagram },
-  { v: 2, suf: "+", l: "Years Experience", icon: Award },
+  { v: 20, suf: "+", l: "Design Projects", icon: Layers },
+  { v: 5, suf: "+", l: "Brand Creatives", icon: Palette },
+  { v: 30, suf: "+", l: "Social Posts", icon: Instagram },
+  { v: 1, suf: "+", l: "Years Experience", icon: Award },
 ];
 
 function Achievements() {
