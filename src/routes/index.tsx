@@ -725,24 +725,28 @@ function Portfolio_() {
         {lightboxIdx !== null && galleryImages[lightboxIdx] && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={closeLightbox}
+            role="dialog" aria-modal="true" aria-label={`${activeCat} image viewer`}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-xl">
             <button onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
-              className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20">
+              aria-label="Close image viewer"
+              className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
               <X className="h-5 w-5" />
             </button>
             <button onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110">
+              aria-label="Previous image"
+              className="absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
               <ArrowLeft className="h-5 w-5" />
             </button>
             <button onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110">
+              aria-label="Next image"
+              className="absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
               <ArrowRight className="h-5 w-5" />
             </button>
             <motion.img key={lightboxIdx}
               initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              src={galleryImages[lightboxIdx]} alt=""
+              src={galleryImages[lightboxIdx]} alt={`${activeCat} design by DesignedByLD — ${lightboxIdx + 1} of ${galleryImages.length}`}
               className="max-h-[90vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl" />
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur">
               {lightboxIdx + 1} / {galleryImages.length}
