@@ -57,6 +57,8 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
+const SITE_URL = "https://designedbyld.lovable.app";
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
     meta: [
@@ -65,18 +67,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "DesignedByLD — Graphic Designer & Visual Storyteller" },
       { name: "description", content: "Portfolio of DesignedByLD — Graphic Designer, Visual Storyteller & Creative Technologist based in India. Crafting visual experiences that connect, inspire, and convert." },
       { name: "author", content: "DesignedByLD" },
-      { name: "keywords", content: "Graphic Designer  Graphic Designer India, Freelance Graphic Designer, Brand Designer, Social Media Designer, Visual Storyteller" },
+      { name: "keywords", content: "DesignedByLD, Graphic Designer India, Freelance Graphic Designer, Brand Designer, Social Media Designer, Visual Storyteller" },
+      { property: "og:site_name", content: "DesignedByLD" },
       { property: "og:title", content: "DesignedByLD — Graphic Designer & Visual Storyteller" },
       { property: "og:description", content: "Crafting visual experiences that connect, inspire, and convert." },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "DesignedByLD — Graphic Designer" },
       { name: "twitter:description", content: "Designing brands that people remember." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "canonical", href: "/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" },
@@ -87,11 +89,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         "@context": "https://schema.org",
         "@type": "Person",
         name: "DesignedByLD",
+        alternateName: "Designed By LD",
         jobTitle: "Graphic Designer & Visual Storyteller",
-        url: "/",
+        url: SITE_URL,
         email: "designedbyld25@gmail.com",
         address: { "@type": "PostalAddress", addressCountry: "IN" },
-        sameAs: ["https://linkedin.com/in/marri-leeladhar", "https://instagram.com/designedby.ld"],
+        sameAs: [
+          "https://linkedin.com/in/marri-leeladhar",
+          "https://instagram.com/designedby.ld",
+        ],
       }),
     }],
   }),
