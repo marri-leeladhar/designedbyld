@@ -1108,7 +1108,7 @@ function Portfolio() {
       <Portfolio_ />
       <Experience />
       <Achievements />
-      <Testimonials />
+      
       <Resume />
       <Socials />
       <Contact />
