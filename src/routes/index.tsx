@@ -808,10 +808,10 @@ function Experience() {
 /* ---------------- Achievements ---------------- */
 
 const stats = [
-  { v: 50, suf: "+", l: "Design Projects", icon: Layers },
-  { v: 20, suf: "+", l: "Brand Creatives", icon: Palette },
-  { v: 100, suf: "+", l: "Social Posts", icon: Instagram },
-  { v: 2, suf: "+", l: "Years Experience", icon: Award },
+  { v: 20, suf: "+", l: "Design Projects", icon: Layers },
+  { v: 5, suf: "+", l: "Brand Creatives", icon: Palette },
+  { v: 30, suf: "+", l: "Social Posts", icon: Instagram },
+  { v: 1, suf: "+", l: "Years Experience", icon: Award },
 ];
 
 function Achievements() {
@@ -842,47 +842,6 @@ function Achievements() {
   );
 }
 
-/* ---------------- Testimonials ---------------- */
-
-const testimonials = [
-  { n: "Priya Sharma", co: "Marketing Lead, InAmigos Foundation", r: "designedby.ld's visual storytelling brought our campaigns to life. The engagement jumped overnight.", a: "PS", g: "linear-gradient(135deg,#7C3AED,#06B6D4)" },
-  { n: "Rohit Verma", co: "Founder, Brewline Coffee", r: "He understood the brand instantly. The identity system he built feels like it's been there forever.", a: "RV", g: "linear-gradient(135deg,#06B6D4,#2563EB)" },
-  { n: "Ananya Reddy", co: "Product Manager, EduTech", r: "Pixel-perfect UI work with sharp UX thinking. Easily one of the best designers I've collaborated with.", a: "AR", g: "linear-gradient(135deg,#F59E0B,#E11D48)" },
-  { n: "Karthik Iyer", co: "Creative Director, Studio Nine", r: "Rare combo — design taste, technical depth, and content sense. designedby.ld ships at agency quality.", a: "KI", g: "linear-gradient(135deg,#10B981,#06B6D4)" },
-];
-
-function Testimonials() {
-  return (
-    <section className="relative px-6 py-32">
-      <div className="mx-auto max-w-7xl">
-        <SectionHeader eyebrow="Testimonials" title={<>Kind words from <span className="text-gradient">collaborators</span>.</>} />
-        <div className="grid gap-5 md:grid-cols-2">
-          {testimonials.map((t, i) => (
-            <motion.div key={t.n}
-              initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              whileHover={{ y: -6 }}
-              className="glass relative overflow-hidden rounded-3xl p-8">
-              <Quote className="absolute right-6 top-6 h-10 w-10 text-primary/30" />
-              <div className="flex gap-1 text-accent">
-                {[...Array(5)].map((_, i) => <Star key={i} className="h-4 w-4 fill-current" />)}
-              </div>
-              <p className="mt-4 text-lg leading-relaxed text-foreground/90">"{t.r}"</p>
-              <div className="mt-6 flex items-center gap-4">
-                <div className="grid h-12 w-12 place-items-center rounded-full font-bold text-white" style={{ background: t.g }}>{t.a}</div>
-                <div>
-                  <div className="font-semibold">{t.n}</div>
-                  <div className="text-sm text-muted-foreground">{t.co}</div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 /* ---------------- Resume + Socials ---------------- */
 
 function Resume() {
@@ -901,9 +860,12 @@ function Resume() {
                   className="inline-flex items-center gap-2 rounded-full gradient-primary px-6 py-3 text-sm font-medium text-white shadow-glow">
                   <Download className="h-4 w-4" /> View Resume
                 </a>
-                <MagneticButton href="mailto:designedbyld25@gmail.com" className="glass rounded-full px-6 py-3 text-sm font-medium">
+                <a
+                  href="mailto:designedbyld25@gmail.com?subject=Project%20Inquiry&body=Hi%20Leeladhar%2C%0A%0AI%27d%20like%20to%20discuss%20a%20project%20with%20you."
+                  className="glass inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-medium transition hover:bg-white/10"
+                >
                   <Mail className="h-4 w-4" /> Email Me
-                </MagneticButton>
+                </a>
               </div>
             </div>
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
@@ -1149,7 +1111,7 @@ function Portfolio() {
       <Portfolio_ />
       <Experience />
       <Achievements />
-      <Testimonials />
+      
       <Resume />
       <Socials />
       <Contact />
