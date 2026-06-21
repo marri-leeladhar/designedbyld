@@ -26,9 +26,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "DesignedByLD — Graphic Designer & Visual Storyteller" },
-      { name: "description", content: "Premium portfolio of DesignedByLD — Graphic Designer in India. Brand identity, social media design, and creative technology." },
+      { name: "description", content: "Premium portfolio of DesignedByLD — Graphic Designer in India. Brand identity, social media design, posters, packaging, and creative technology." },
       { property: "og:title", content: "DesignedByLD — Graphic Designer" },
       { property: "og:description", content: "Designing brands that people remember." },
+      { property: "og:url", content: "https://designedbyld.lovable.app/" },
+      { property: "og:image", content: `https://designedbyld.lovable.app${ldHero.url}` },
+      { name: "twitter:image", content: `https://designedbyld.lovable.app${ldHero.url}` },
+    ],
+    links: [
+      { rel: "canonical", href: "https://designedbyld.lovable.app/" },
+      { rel: "preload", as: "image", href: ldPortrait.url, fetchpriority: "high" } as unknown as { rel: string; href: string },
     ],
   }),
   component: Portfolio,
@@ -154,7 +161,7 @@ function Nav() {
         <MagneticButton href="#contact" className="hidden rounded-full gradient-primary px-5 py-2.5 text-sm font-medium text-white shadow-glow md:inline-flex">
           Hire Me <ArrowUpRight className="h-4 w-4" />
         </MagneticButton>
-        <button onClick={() => setOpen(!open)} className="glass grid h-10 w-10 place-items-center rounded-full md:hidden">
+        <button onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} className="glass grid h-11 w-11 place-items-center rounded-full md:hidden">
           {open ? <X className="h-4 w-4" /> : <Layers className="h-4 w-4" />}
         </button>
       </div>
@@ -276,7 +283,7 @@ function Hero() {
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-primary/30 blur-3xl" />
           <div className="absolute -inset-2 -z-10 rounded-[2rem] gradient-primary opacity-40 blur-2xl" />
           <div className="glass relative overflow-hidden rounded-[2rem] p-1.5 shadow-glow">
-            <img src={ldPortrait.url} alt="DesignedByLD portrait" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
+            <img src={ldPortrait.url} alt="DesignedByLD portrait — graphic designer at work" width="1280" height="800" fetchPriority="high" decoding="async" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
           </div>
           <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
             className="glass absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl p-4 shadow-glow sm:flex">
@@ -696,8 +703,9 @@ function Portfolio_() {
                       initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }}
                       transition={{ delay: i * 0.04 }}
                       onClick={() => openLightbox(i)}
-                      className="group relative mb-5 block w-full overflow-hidden rounded-2xl break-inside-avoid">
-                      <img src={src} alt="" loading="lazy"
+                      aria-label={`Open ${activeCat} image ${i + 1} in lightbox`}
+                      className="group relative mb-5 block w-full overflow-hidden rounded-2xl break-inside-avoid focus:outline-none focus-visible:ring-2 focus-visible:ring-accent">
+                      <img src={src} alt={`${activeCat} design by DesignedByLD — ${i + 1}`} loading="lazy" decoding="async"
                         className="block w-full transition-transform duration-700 group-hover:scale-[1.04]" />
                     </motion.button>
                   ))}
@@ -717,24 +725,28 @@ function Portfolio_() {
         {lightboxIdx !== null && galleryImages[lightboxIdx] && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={closeLightbox}
+            role="dialog" aria-modal="true" aria-label={`${activeCat} image viewer`}
             className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 backdrop-blur-xl">
             <button onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
-              className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20">
+              aria-label="Close image viewer"
+              className="absolute right-5 top-5 z-10 grid h-11 w-11 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-colors hover:bg-white/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
               <X className="h-5 w-5" />
             </button>
             <button onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110">
+              aria-label="Previous image"
+              className="absolute left-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
               <ArrowLeft className="h-5 w-5" />
             </button>
             <button onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110">
+              aria-label="Next image"
+              className="absolute right-4 top-1/2 z-10 grid h-12 w-12 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-white backdrop-blur transition-all hover:bg-white/20 hover:scale-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
               <ArrowRight className="h-5 w-5" />
             </button>
             <motion.img key={lightboxIdx}
               initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
               onClick={(e) => e.stopPropagation()}
-              src={galleryImages[lightboxIdx]} alt=""
+              src={galleryImages[lightboxIdx]} alt={`${activeCat} design by DesignedByLD — ${lightboxIdx + 1} of ${galleryImages.length}`}
               className="max-h-[90vh] max-w-[92vw] rounded-2xl object-contain shadow-2xl" />
             <div className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-white/10 px-4 py-1.5 text-xs text-white backdrop-blur">
               {lightboxIdx + 1} / {galleryImages.length}
