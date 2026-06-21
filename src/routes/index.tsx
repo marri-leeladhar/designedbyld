@@ -161,7 +161,7 @@ function Nav() {
         <MagneticButton href="#contact" className="hidden rounded-full gradient-primary px-5 py-2.5 text-sm font-medium text-white shadow-glow md:inline-flex">
           Hire Me <ArrowUpRight className="h-4 w-4" />
         </MagneticButton>
-        <button onClick={() => setOpen(!open)} className="glass grid h-10 w-10 place-items-center rounded-full md:hidden">
+        <button onClick={() => setOpen(!open)} aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} className="glass grid h-11 w-11 place-items-center rounded-full md:hidden">
           {open ? <X className="h-4 w-4" /> : <Layers className="h-4 w-4" />}
         </button>
       </div>
