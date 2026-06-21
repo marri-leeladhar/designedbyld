@@ -283,7 +283,7 @@ function Hero() {
           <div className="absolute -inset-6 -z-10 rounded-[2.5rem] bg-primary/30 blur-3xl" />
           <div className="absolute -inset-2 -z-10 rounded-[2rem] gradient-primary opacity-40 blur-2xl" />
           <div className="glass relative overflow-hidden rounded-[2rem] p-1.5 shadow-glow">
-            <img src={ldPortrait.url} alt="DesignedByLD portrait" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
+            <img src={ldPortrait.url} alt="DesignedByLD portrait — graphic designer at work" width="1280" height="800" fetchPriority="high" decoding="async" className="aspect-[16/10] w-full rounded-[1.6rem] object-cover" />
           </div>
           <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration: 4, repeat: Infinity }}
             className="glass absolute -bottom-6 -left-6 hidden items-center gap-3 rounded-2xl p-4 shadow-glow sm:flex">
